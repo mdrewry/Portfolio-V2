@@ -1,6 +1,7 @@
 import SimpleIntervalIcon from "./Res/SimpleIntervalIcon.png";
 import CrowdFlowIcon from "./Res/CrowdFlowIcon.jpg";
-import PortfolioV1Icon from "./Res/ResumeIcon.png";
+import PortfolioV1Icon from "./Res/ResumeV1Icon.PNG";
+import PortfolioV2Icon from "./Res/ResumeV2Icon.PNG";
 import HeavenlyAstrologyIcon from "./Res/HeavenlyAstrologyIcon.ico";
 import AndroidStudioIcon from "./Res/AndroidStudioLogo.png";
 import ReactIcon from "./Res/ReactIcon.png";
@@ -68,7 +69,7 @@ export default [
       "A second attempt at creating a portfolio website with a different design in mind.",
     repoLink: "https://github.com/mdrewry/SimpleInterval",
     optionalLink: "",
-    projectIcon: PortfolioV1Icon,
+    projectIcon: PortfolioV2Icon,
     techStack: [
       {
         key: "1",

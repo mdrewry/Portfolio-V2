@@ -1,5 +1,4 @@
 import { makeStyles } from "@material-ui/core/styles";
-
 const useStyles = makeStyles({
   //main page
   main: {
@@ -30,8 +29,10 @@ const useStyles = makeStyles({
     alignSelf: "center",
   },
   IconImage: {
-    height: "25px",
+    color: "#D81159",
   },
+
+  ProjectButton: {},
 
   //Projects Stuff
   ProjectsWrapper: {

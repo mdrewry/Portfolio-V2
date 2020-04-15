@@ -17,8 +17,9 @@ function App() {
       </Typography>
       <IconBar />
       <MButton
-        variant="outlined"
+        variant="contained"
         color="secondary"
+        className={style.ProjectButton}
         onClick={() => scroll.scrollToBottom()}
       >
         Projects

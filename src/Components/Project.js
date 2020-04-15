@@ -25,8 +25,10 @@ function Project(props) {
           </div>
         </Grid>
         <Grid item xs={5}>
-          <img className={style.ProjectImage} src={projectIcon}></img>
-          <TechStack techStackIcons={techStack} />
+          <div className={style.ProjectInformation}>
+            <img className={style.ProjectImage} src={projectIcon}></img>
+            <TechStack techStackIcons={techStack} />
+          </div>
         </Grid>
       </Grid>
     </div>

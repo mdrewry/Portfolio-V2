@@ -55,16 +55,20 @@ const useStyles = makeStyles({
   },
   ProjectInformation: {
     height: "225px",
+    position: "relative",
   },
   ProjectText: {
     fontSize: 13,
     textAlign: "left",
     color: "#FFFFFF",
   },
-  TechStackMainWrapper: {},
+  TechStackMainWrapper: {
+    position: "absolute",
+    bottom: 0,
+    right: 0,
+  },
   TechStackMain: {
     width: "100px",
-    float: "right",
     display: "flex",
     flexDirection: "row",
     justifyContent: "flex-end",

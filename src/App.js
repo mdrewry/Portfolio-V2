@@ -1,4 +1,5 @@
 import React from "react";
+import { animateScroll as scroll } from "react-scroll";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import useStyles from "./Styles.js";
@@ -8,19 +9,17 @@ import Project from "./Components/Project.js";
 import ProjectsList from "./ProjectsList";
 function App() {
   const style = useStyles();
-  const ProjectsSelected = (e) => {
-    document.getElementById("Projects").scrollIntoView();
-  };
+  const ProjectsSelected = (e) => {};
   return (
     <div className={style.main}>
       <Typography className={style.WelcomeText}>
-        I am a student studying computer science at UF
+        Hello, my name is Mark Drewry and I am studying computer science at UF
       </Typography>
       <IconBar />
       <MButton
         variant="outlined"
         color="secondary"
-        onClick={(e) => ProjectsSelected()}
+        onClick={() => scroll.scrollToBottom()}
       >
         Projects
       </MButton>

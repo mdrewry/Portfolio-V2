@@ -1,6 +1,7 @@
 import React from "react";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
+import TechStack from "./TechStack.js";
 import useStyles from "../Styles.js";
 function Project(props) {
   const style = useStyles();
@@ -17,7 +18,7 @@ function Project(props) {
     <div>
       <Grid className={style.ProjectMain} container spacing={2}>
         <Grid item xs={7}>
-          <div>
+          <div className={style.ProjectInformation}>
             <Typography className={style.ProjectText}>{title}</Typography>
             <br />
             <Typography className={style.ProjectText}>{description}</Typography>
@@ -25,6 +26,7 @@ function Project(props) {
         </Grid>
         <Grid item xs={5}>
           <img className={style.ProjectImage} src={projectIcon}></img>
+          <TechStack techStackIcons={techStack} />
         </Grid>
       </Grid>
     </div>

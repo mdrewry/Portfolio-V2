@@ -11,6 +11,7 @@ const useStyles = makeStyles({
   WelcomeText: {
     fontSize: "25px",
     paddingTop: "38vh",
+    color: "#FFFFFF",
   },
 
   //Icon Stuff
@@ -34,27 +35,43 @@ const useStyles = makeStyles({
 
   //Projects Stuff
   ProjectsWrapper: {
-    marginTop: "50vh",
+    marginTop: "30vh",
     display: "flex",
     flexDirection: "row",
     justifyContent: "center",
   },
   Projects: {
-    width: "80vh",
+    width: "120vh",
     padding: "20px",
     borderColor: "#D81159",
     border: "double",
   },
   ProjectsGrid: {},
   IndividualProject: {},
-  ProjectMain: { backgroundColor: "#D81159" },
+  ProjectMain: { borderColor: "#D81159", border: "solid" },
   ProjectImage: {
     width: "120px",
     float: "right",
   },
+  ProjectInformation: {
+    height: "225px",
+  },
   ProjectText: {
-    fontSize: 11,
-    float: "left",
+    fontSize: 13,
+    textAlign: "left",
+    color: "#FFFFFF",
+  },
+  TechStackMainWrapper: {},
+  TechStackMain: {
+    width: "100px",
+    float: "right",
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "flex-end",
+  },
+  TechStackImage: {
+    height: "40px",
+    marginLeft: "10px",
   },
 });
 

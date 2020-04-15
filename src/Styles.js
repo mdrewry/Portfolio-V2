@@ -4,7 +4,7 @@ const useStyles = makeStyles({
   //main page
   main: {
     width: "100hw",
-    height: "100vh",
+    height: "200vh",
     backgroundColor: "#222831",
     textAlign: "center",
   },
@@ -20,7 +20,7 @@ const useStyles = makeStyles({
     flexDirection: "row",
     justifyContent: "center",
     paddingTop: "2vh",
-    paddingBottom: "20vh",
+    paddingBottom: "30vh",
   },
   IconBarMain: {
     width: "500px",
@@ -31,6 +31,11 @@ const useStyles = makeStyles({
   },
   IconImage: {
     height: "25px",
+  },
+
+  //Projects Stuff
+  Projects: {
+    paddingTop: "30vh",
   },
 });
 

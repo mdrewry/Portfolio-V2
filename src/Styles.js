@@ -4,7 +4,7 @@ const useStyles = makeStyles({
   //main page
   main: {
     width: "100hw",
-    height: "200vh",
+    height: "180vh",
     backgroundColor: "#222831",
     textAlign: "center",
   },
@@ -15,7 +15,6 @@ const useStyles = makeStyles({
 
   //Icon Stuff
   IconBarMainWrapper: {
-    width: "100hw",
     display: "flex",
     flexDirection: "row",
     justifyContent: "center",
@@ -34,8 +33,28 @@ const useStyles = makeStyles({
   },
 
   //Projects Stuff
+  ProjectsWrapper: {
+    marginTop: "50vh",
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "center",
+  },
   Projects: {
-    paddingTop: "30vh",
+    width: "80vh",
+    padding: "20px",
+    borderColor: "#D81159",
+    border: "double",
+  },
+  ProjectsGrid: {},
+  IndividualProject: {},
+  ProjectMain: { backgroundColor: "#D81159" },
+  ProjectImage: {
+    width: "120px",
+    float: "right",
+  },
+  ProjectText: {
+    fontSize: 11,
+    float: "left",
   },
 });
 

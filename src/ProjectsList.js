@@ -7,7 +7,9 @@ import AndroidStudioIcon from "./Res/AndroidStudioLogo.png";
 import ReactIcon from "./Res/ReactIcon.png";
 import GoogleCloudIcon from "./Res/googleCloudIcon.png";
 import JavaIcon from "./Res/JavaLogo.png";
-import MernIcon from "./Res/MernStackLogo.png";
+import mongodbIcon from "./Res/mongodbIcon.png";
+import expressIcon from "./Res/expressIcon.png";
+import nodeIcon from "./Res/nodeIcon.png";
 export default [
   {
     key: "1",
@@ -21,10 +23,12 @@ export default [
       {
         key: "1",
         path: AndroidStudioIcon,
+        name: "Android Studio",
       },
       {
         key: "2",
         path: JavaIcon,
+        name: "Java",
       },
     ],
   },
@@ -40,10 +44,12 @@ export default [
       {
         key: "1",
         path: ReactIcon,
+        name: "React",
       },
       {
         key: "2",
         path: GoogleCloudIcon,
+        name: "Google Cloud",
       },
     ],
   },
@@ -51,7 +57,7 @@ export default [
     key: "3",
     title: "Portfolio V1",
     description:
-      "My first portfolio website. This project was a design learnign experience and made me more comfortable creating frontend websites",
+      "My first portfolio website. This project was a design learning experience and made me more comfortable creating frontend websites",
     repoLink: "https://github.com/mdrewry/Portfolio",
     optionalLink: "",
     projectIcon: PortfolioV1Icon,
@@ -59,6 +65,7 @@ export default [
       {
         key: "1",
         path: ReactIcon,
+        name: "React",
       },
     ],
   },
@@ -74,6 +81,7 @@ export default [
       {
         key: "1",
         path: ReactIcon,
+        name: "React",
       },
     ],
   },
@@ -88,7 +96,23 @@ export default [
     techStack: [
       {
         key: "1",
-        path: MernIcon,
+        path: mongodbIcon,
+        name: "Mongo Databases",
+      },
+      {
+        key: "2",
+        path: expressIcon,
+        name: "Express JS",
+      },
+      {
+        key: "3",
+        path: ReactIcon,
+        name: "React",
+      },
+      {
+        key: "4",
+        path: nodeIcon,
+        name: "Node JS",
       },
     ],
   },

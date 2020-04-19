@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Avatar, Tooltip } from "@material-ui/core/";
 import useStyles from "../Styles.js";
 function TechStack(props) {
   const style = useStyles();
@@ -6,11 +7,17 @@ function TechStack(props) {
   return (
     <div className={style.TechStackMain}>
       {techIcons.map((techIcon) => (
-        <img
-          key={techIcon.key}
-          className={style.TechStackImage}
-          src={techIcon.path}
-        ></img>
+        <Tooltip key={techIcon.key} title={techIcon.name}>
+          <Avatar
+            style={{
+              width: "40px",
+              height: "40px",
+              backgroundColor: "#FFFFFF",
+              textAlign: "center",
+            }}
+            src={techIcon.path}
+          ></Avatar>
+        </Tooltip>
       ))}
     </div>
   );

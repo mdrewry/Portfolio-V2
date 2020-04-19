@@ -1,5 +1,11 @@
 import React from "react";
-import { Card, CardContent, Typography } from "@material-ui/core/";
+import {
+  Card,
+  CardContent,
+  Typography,
+  Avatar,
+  Paper,
+} from "@material-ui/core/";
 import TechStack from "./TechStack.js";
 import useStyles from "../Styles.js";
 function Project(props) {
@@ -16,23 +22,34 @@ function Project(props) {
   return (
     <Card
       className={style.ProjectMain}
+      style={{ backgroundColor: "#222831" }}
       spacing={2}
-      style={{
-        backgroundColor: "#222831",
-      }}
     >
-      <CardContent>
-        <div className={style.ProjectInformation}>
-          <Typography className={style.ProjectText}>{title}</Typography>
-          <br />
-          <Typography className={style.ProjectText}>{description}</Typography>
-        </div>
-      </CardContent>
-      <CardContent>
-        <div className={style.ProjectVisuals}>
+      <div className={style.CardHeader}>
+        <Typography className={style.ProjectTitle}>{title}</Typography>
+        <Avatar
+          style={{
+            width: "80px",
+            height: "80px",
+          }}
+          variant="rounded"
+        >
           <img className={style.ProjectImage} src={projectIcon}></img>
+        </Avatar>
+      </div>
+      <CardContent className={style.ProjectInformation}>
+        <Typography className={style.ProjectText}>{description}</Typography>
+        <div style={{ flexGrow: 1 }} />
+        <Paper
+          style={{
+            backgroundColor: "#4a505a",
+            marginTop: "10px",
+            padding: "10px",
+          }}
+        >
+          <Typography className={style.TechStackTitle}>Tech Stack</Typography>
           <TechStack techStackIcons={techStack} />
-        </div>
+        </Paper>
       </CardContent>
     </Card>
   );

@@ -1,5 +1,5 @@
-import { makeStyles } from "@material-ui/core/styles";
-const useStyles = makeStyles({
+import { makeStyles, ThemeProvider } from "@material-ui/core/styles";
+const useStyles = makeStyles((theme) => ({
   //main page
   main: {
     height: "200vh",
@@ -34,24 +34,37 @@ const useStyles = makeStyles({
 
   //Projects Stuff
   ProjectsGridWrapper: { width: "75vw", marginTop: "50vh" },
-  ProjectMain: { borderColor: "#D81159", border: "solid" },
-  ProjectImage: {
-    width: "100px",
+  ProjectMain: {
+    borderColor: "#D81159",
+    border: "solid",
+    padding: "10px",
+  },
+  CardHeader: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
   },
   ProjectInformation: {
-    position: "relative",
-    height: "18vh",
-  },
-  ProjectVisuals: {
-    height: "18vh",
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-between",
-    alignItems: "center",
+    minHeight: "29vh",
+  },
+  ProjectImage: { height: "80px" },
+  ProjectTitle: {
+    fontSize: 20,
+    textAlign: "left",
+    color: "#FFFFFF",
   },
   ProjectText: {
     fontSize: 13,
     textAlign: "left",
+    color: "#FFFFFF",
+  },
+  TechStackTitle: {
+    marginBottom: "10px",
+    textAlign: "center",
     color: "#FFFFFF",
   },
   TechStackMain: {
@@ -63,6 +76,6 @@ const useStyles = makeStyles({
     height: "40px",
     marginLeft: "10px",
   },
-});
+}));
 
 export default useStyles;

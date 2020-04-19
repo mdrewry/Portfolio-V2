@@ -34,6 +34,38 @@ export default [
   },
   {
     key: "2",
+    title: "Portfolio V1",
+    description:
+      "My first portfolio website. This project was a design learning experience and made me more comfortable creating frontend websites",
+    repoLink: "https://github.com/mdrewry/Portfolio",
+    optionalLink: "",
+    projectIcon: PortfolioV1Icon,
+    techStack: [
+      {
+        key: "1",
+        path: ReactIcon,
+        name: "React",
+      },
+    ],
+  },
+  {
+    key: "3",
+    title: "Portfolio V2",
+    description:
+      "A second attempt at creating a portfolio website with a different design in mind.",
+    repoLink: "https://github.com/mdrewry/SimpleInterval",
+    optionalLink: "",
+    projectIcon: PortfolioV2Icon,
+    techStack: [
+      {
+        key: "1",
+        path: ReactIcon,
+        name: "React",
+      },
+    ],
+  },
+  {
+    key: "4",
     title: "Crowd Flow",
     description:
       "Crowd Flow was a project made at Swamphacks VI, in 2019. It is a webapp developed using React, and Google Cloud services. The app was intended to be a tool used for event planning that would give organizers information on movement patterns, which would allow them to create a better experience. This is my first web project and was an amazing experience.",
@@ -50,38 +82,6 @@ export default [
         key: "2",
         path: GoogleCloudIcon,
         name: "Google Cloud",
-      },
-    ],
-  },
-  {
-    key: "3",
-    title: "Portfolio V1",
-    description:
-      "My first portfolio website. This project was a design learning experience and made me more comfortable creating frontend websites",
-    repoLink: "https://github.com/mdrewry/Portfolio",
-    optionalLink: "",
-    projectIcon: PortfolioV1Icon,
-    techStack: [
-      {
-        key: "1",
-        path: ReactIcon,
-        name: "React",
-      },
-    ],
-  },
-  {
-    key: "4",
-    title: "Portfolio V2",
-    description:
-      "A second attempt at creating a portfolio website with a different design in mind.",
-    repoLink: "https://github.com/mdrewry/SimpleInterval",
-    optionalLink: "",
-    projectIcon: PortfolioV2Icon,
-    techStack: [
-      {
-        key: "1",
-        path: ReactIcon,
-        name: "React",
       },
     ],
   },

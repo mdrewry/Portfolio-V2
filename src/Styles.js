@@ -8,6 +8,8 @@ const useStyles = makeStyles((theme) => ({
   WelcomeText: {
     fontSize: "25px",
     paddingTop: "38vh",
+    paddingLeft: "10px",
+    paddingRight: "10px",
     color: "#FFFFFF",
   },
 
@@ -49,7 +51,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-between",
-    minHeight: "29vh",
+    minHeight: "28vh",
   },
   ProjectImage: { height: "80px" },
   ProjectTitle: {
@@ -58,7 +60,7 @@ const useStyles = makeStyles((theme) => ({
     color: "#FFFFFF",
   },
   ProjectText: {
-    fontSize: 13,
+    fontSize: 12,
     textAlign: "left",
     color: "#FFFFFF",
   },

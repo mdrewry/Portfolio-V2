@@ -7,7 +7,7 @@ function TechStack(props) {
   return (
     <div className={style.TechStackMain}>
       {techIcons.map((techIcon) => (
-        <Tooltip key={techIcon.key} title={techIcon.name}>
+        <Tooltip title={techIcon.name} key={techIcon.key}>
           <Avatar
             style={{
               width: "40px",

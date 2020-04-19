@@ -2,9 +2,7 @@ import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles({
   //main page
   main: {
-    width: "100hw",
-    height: "180vh",
-    backgroundColor: "#222831",
+    height: "200vh",
     textAlign: "center",
   },
   WelcomeText: {
@@ -35,44 +33,31 @@ const useStyles = makeStyles({
   ProjectButton: {},
 
   //Projects Stuff
-  ProjectsWrapper: {
-    marginTop: "30vh",
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "center",
-  },
-  Projects: {
-    width: "120vh",
-    padding: "20px",
-    borderColor: "#D81159",
-    border: "double",
-  },
-  ProjectsGrid: {},
-  IndividualProject: {},
+  ProjectsGridWrapper: { width: "75vw", marginTop: "50vh" },
   ProjectMain: { borderColor: "#D81159", border: "solid" },
   ProjectImage: {
-    width: "120px",
-    float: "right",
+    width: "100px",
   },
   ProjectInformation: {
-    height: "225px",
     position: "relative",
+    height: "18vh",
+  },
+  ProjectVisuals: {
+    height: "18vh",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
+    alignItems: "center",
   },
   ProjectText: {
     fontSize: 13,
     textAlign: "left",
     color: "#FFFFFF",
   },
-  TechStackMainWrapper: {
-    position: "absolute",
-    bottom: 0,
-    right: 0,
-  },
   TechStackMain: {
-    width: "100px",
     display: "flex",
     flexDirection: "row",
-    justifyContent: "flex-end",
+    justifyContent: "space-around",
   },
   TechStackImage: {
     height: "40px",

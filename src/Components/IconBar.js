@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import useStyles from "../Styles.js";
 import Tooltip from "@material-ui/core/Tooltip";
 import {
@@ -37,7 +37,7 @@ function IconBar() {
             <Twitter className={style.IconImage}></Twitter>
           </Tooltip>
         </a>
-        <a href={"Resume.png"} target="blank">
+        <a href={"Resume.pdf"} target="blank">
           <Tooltip title="Download Resume">
             <AccountBox className={style.IconImage}></AccountBox>
           </Tooltip>

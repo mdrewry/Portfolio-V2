@@ -89,7 +89,7 @@ export default [
     key: "5",
     title: "Heavenly Writing - UF Internship",
     description:
-      "As part of my Software Engineering class, CEN3031 at UF, the University requested small buisness owners to offer internships in order to gain experience working on a full stack webapp. This webapp allows you to sign up to recieve a new horoscope via calendar or email every moon phase. This project gave me lots of experience using Github in group settings, and allowed me to work on the MERN stack.",
+      "As part of my Software Engineering class, CEN3031 at UF, the University partnered with local businesses to offer internships in order to gain experience working on a full stack webapp. This webapp allows you to sign up to recieve a new horoscope via calendar or email every moon phase. This project gave me lots of experience using Github in group settings, and allowed me to work on the MERN stack.",
     repoLink: "https://github.com/6XAM/MVP",
     optionalLink: "",
     projectIcon: HeavenlyAstrologyIcon,

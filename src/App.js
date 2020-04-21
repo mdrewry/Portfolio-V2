@@ -67,16 +67,6 @@ function App() {
               projectIcon={ProjectsList[3].projectIcon}
             />
           </Grid>
-          <Grid className={style.IndividualProject} item xs={12} lg={4}>
-            <Project
-              title={ProjectsList[4].title}
-              repoLink={ProjectsList[4].repoLink}
-              description={ProjectsList[4].description}
-              techStack={ProjectsList[4].techStack}
-              optionalLink={ProjectsList[4].optionalLink}
-              projectIcon={ProjectsList[4].projectIcon}
-            />
-          </Grid>
         </Grid>
       </Container>
     </div>

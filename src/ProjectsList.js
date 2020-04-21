@@ -16,7 +16,7 @@ export default [
     title: "Simple Interval",
     description:
       "An interval timer inspired by my friend's workout routine. My first project using Android Studio",
-    repoLink: "https://github.com/mdrewry/SimpleInterval",
+    repoLink: "https://github.com/mdrewry/IntervalTimer",
     optionalLink: "",
     projectIcon: SimpleIntervalIcon,
     techStack: [
@@ -53,7 +53,7 @@ export default [
     title: "Portfolio V2",
     description:
       "A second attempt at creating a portfolio website with a different design in mind.",
-    repoLink: "https://github.com/mdrewry/SimpleInterval",
+    repoLink: "https://github.com/mdrewry/Portfolio-V2",
     optionalLink: "",
     projectIcon: PortfolioV2Icon,
     techStack: [
@@ -69,7 +69,7 @@ export default [
     title: "Crowd Flow",
     description:
       "Crowd Flow was a project made at Swamphacks VI, in 2019. It is a webapp developed using React, and Google Cloud services. The app was intended to be a tool used for event planning that would give organizers information on movement patterns, which would allow them to create a better experience. This is my first web project and was an amazing experience.",
-    repoLink: "https://github.com/mdrewry/SimpleInterval",
+    repoLink: "https://github.com/manthi4/SwampHack2020",
     optionalLink: "",
     projectIcon: CrowdFlowIcon,
     techStack: [
@@ -90,7 +90,7 @@ export default [
     title: "Heavenly Writing - UF Internship",
     description:
       "As part of my Software Engineering class, CEN3031 at UF, the University requested small buisness owners to offer internships in order to gain experience working on a full stack webapp. This webapp allows you to sign up to recieve a new horoscope via calendar or email every moon phase. This project gave me lots of experience using Github in group settings, and allowed me to work on the MERN stack",
-    repoLink: "https://github.com/mdrewry/SimpleInterval",
+    repoLink: "https://github.com/6XAM/MVP",
     optionalLink: "",
     projectIcon: HeavenlyAstrologyIcon,
     techStack: [

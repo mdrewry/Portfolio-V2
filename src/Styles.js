@@ -40,6 +40,7 @@ const useStyles = makeStyles((theme) => ({
     borderColor: "#D81159",
     border: "solid",
     padding: "10px",
+    hover: "",
   },
   CardHeader: {
     display: "flex",

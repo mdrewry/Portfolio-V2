@@ -13,7 +13,8 @@ function App() {
   return (
     <div className={style.main}>
       <Typography className={style.WelcomeText}>
-        Hello, my name is Mark Drewry and I am studying computer science at UF
+        Hello, my name is Mark Drewry. I am currently studying computer science
+        at UF.
       </Typography>
       <IconBar />
       <MButton

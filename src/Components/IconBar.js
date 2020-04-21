@@ -39,7 +39,10 @@ function IconBar() {
         </a>
         <a href={"Resume.pdf"} target="blank">
           <Tooltip title="Download Resume">
-            <AccountBox className={style.IconImage}></AccountBox>
+            <AccountBox
+              className={style.IconImage}
+              fontSize="large"
+            ></AccountBox>
           </Tooltip>
         </a>
         <a href={gitLink}>

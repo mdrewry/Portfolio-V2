@@ -57,7 +57,7 @@ function Project(props) {
               }}
             >
               <Typography className={style.TechStackTitle}>
-                Tech Stack
+                Created With
               </Typography>
               <TechStack techStackIcons={techStack} />
             </Paper>

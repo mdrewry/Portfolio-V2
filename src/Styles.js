@@ -27,6 +27,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "row",
     justifyContent: "space-evenly",
     alignSelf: "center",
+    alignItems: "center",
   },
   IconImage: {
     color: "#D81159",

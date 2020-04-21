@@ -15,7 +15,7 @@ export default [
     key: "1",
     title: "Simple Interval",
     description:
-      "An interval timer inspired by my friend's workout routine. My first project using Android Studio",
+      "An interval timer inspired by my friend's workout routine. I had always been curious about making an app and when the Play store did not have any timers I liked, I took it as an opportunity to learn. I created some beginner projects following tutorials online, and have become somewhat familiar with Android Studio. I applied this knowledge and created this simple interval timer available on the Google Play Store.",
     repoLink: "https://github.com/mdrewry/IntervalTimer",
     optionalLink: "",
     projectIcon: SimpleIntervalIcon,
@@ -36,7 +36,7 @@ export default [
     key: "2",
     title: "Portfolio V1",
     description:
-      "My first portfolio website. This project was a design learning experience and made me more comfortable creating frontend websites",
+      "My first portfolio website. This project was my first solo project and it allowed me to become more comfortable using Javascript and React to make frontend websites.",
     repoLink: "https://github.com/mdrewry/Portfolio",
     optionalLink: "",
     projectIcon: PortfolioV1Icon,
@@ -52,7 +52,7 @@ export default [
     key: "3",
     title: "Portfolio V2",
     description:
-      "A second attempt at creating a portfolio website with a different design in mind.",
+      "A second attempt at creating a portfolio website with a different design in mind. I was able to use the experience gained from the Heavenly Astrology/UF internship to create a flexible, mobile friendly website.",
     repoLink: "https://github.com/mdrewry/Portfolio-V2",
     optionalLink: "",
     projectIcon: PortfolioV2Icon,
@@ -68,7 +68,7 @@ export default [
     key: "4",
     title: "Crowd Flow",
     description:
-      "Crowd Flow was a project made at Swamphacks VI, in 2019. It is a webapp developed using React, and Google Cloud services. The app was intended to be a tool used for event planning that would give organizers information on movement patterns, which would allow them to create a better experience. This is my first web project and was an amazing experience.",
+      "Crowd Flow was a project made at Swamphacks VI, in 2019. It is a webapp developed using React, and Google Cloud services. The app was intended to be a tool used for event planning that would give organizers information on movement patterns, which would allow them to create a better experience. Although we were not able to finish the full webapp, it was my first web project and was an amazing experience.",
     repoLink: "https://github.com/manthi4/SwampHack2020",
     optionalLink: "",
     projectIcon: CrowdFlowIcon,
@@ -89,7 +89,7 @@ export default [
     key: "5",
     title: "Heavenly Writing - UF Internship",
     description:
-      "As part of my Software Engineering class, CEN3031 at UF, the University requested small buisness owners to offer internships in order to gain experience working on a full stack webapp. This webapp allows you to sign up to recieve a new horoscope via calendar or email every moon phase. This project gave me lots of experience using Github in group settings, and allowed me to work on the MERN stack",
+      "As part of my Software Engineering class, CEN3031 at UF, the University requested small buisness owners to offer internships in order to gain experience working on a full stack webapp. This webapp allows you to sign up to recieve a new horoscope via calendar or email every moon phase. This project gave me lots of experience using Github in group settings, and allowed me to work on the MERN stack.",
     repoLink: "https://github.com/6XAM/MVP",
     optionalLink: "",
     projectIcon: HeavenlyAstrologyIcon,

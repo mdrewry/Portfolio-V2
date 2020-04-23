@@ -28,7 +28,7 @@ function App() {
     >
       <div style={{ display: "flex", flexDirection: "row", position: "fixed" }}>
         {darkMode && (
-          <Tooltip title="Copy Email">
+          <Tooltip title="Light Mode">
             <BrightnessLow
               style={{
                 color: currentTheme.highlight,
@@ -42,7 +42,7 @@ function App() {
           </Tooltip>
         )}
         {!darkMode && (
-          <Tooltip title="Copy Email">
+          <Tooltip title="Dark Mode">
             <BrightnessHigh
               style={{
                 color: currentTheme.highlight,

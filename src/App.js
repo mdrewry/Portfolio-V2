@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import { animateScroll as scroll } from "react-scroll";
 import { BrightnessLow, BrightnessHigh } from "@material-ui/icons";
-import Typography from "@material-ui/core/Typography";
-import Grid from "@material-ui/core/Grid";
-import Container from "@material-ui/core/Container";
-import Tooltip from "@material-ui/core/Tooltip";
+import {
+  Typography,
+  Grid,
+  Button,
+  Container,
+  Tooltip,
+} from "@material-ui/core";
 import { useStyles, theme } from "./Styles.js";
 import IconBar from "./Components/IconBar.js";
-import MButton from "@material-ui/core/Button";
 import Project from "./Components/Project.js";
 import ProjectsList from "./ProjectsList";
 function App() {
@@ -65,7 +67,7 @@ function App() {
         at UF.
       </Typography>
       <IconBar currentTheme={currentTheme} />
-      <MButton
+      <Button
         variant="contained"
         style={{
           backgroundColor: currentTheme.highlight,
@@ -75,7 +77,7 @@ function App() {
         onClick={() => scroll.scrollToBottom()}
       >
         Projects
-      </MButton>
+      </Button>
       <Container className={style.ProjectsGridWrapper}>
         <Grid className={style.ProjectsGrid} container spacing={6}>
           {ProjectsList.map((ProjectI) => (

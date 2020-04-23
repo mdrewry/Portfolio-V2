@@ -3,7 +3,7 @@ import CrowdFlowIcon from "./Res/CrowdFlowIcon.jpg";
 import PortfolioV1Icon from "./Res/ResumeV1Icon.PNG";
 import PortfolioV2Icon from "./Res/ResumeV2Icon.PNG";
 import HeavenlyAstrologyIcon from "./Res/HeavenlyAstrologyIcon.ico";
-import AndroidStudioIcon from "./Res/AndroidStudioLogo.png";
+import AndroidStudioIcon from "./Res/AndroidStudioLogo2.png";
 import ReactIcon from "./Res/ReactIcon.png";
 import GoogleCloudIcon from "./Res/googleCloudIcon.png";
 import JavaIcon from "./Res/JavaLogo.png";

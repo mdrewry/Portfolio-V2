@@ -1,6 +1,4 @@
 import React from "react";
-import { useStyles } from "../Styles.js";
-import Tooltip from "@material-ui/core/Tooltip";
 import {
   Twitter,
   Email,
@@ -8,6 +6,9 @@ import {
   GitHub,
   LinkedIn,
 } from "@material-ui/icons";
+import { useStyles } from "../Styles.js";
+import Tooltip from "@material-ui/core/Tooltip";
+
 function IconBar(props) {
   const style = useStyles();
   const gitLink = "https://github.com/mdrewry";

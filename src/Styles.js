@@ -41,12 +41,13 @@ export const useStyles = makeStyles((theme) => ({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
+    padding: "10px",
   },
   ProjectInformation: {
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-between",
-    minHeight: "28vh",
+    minHeight: "24vh",
   },
   ProjectImage: { height: "80px" },
   ProjectTitle: {
@@ -74,14 +75,14 @@ export const useStyles = makeStyles((theme) => ({
 
 export const theme = {
   light: {
-    primary: "#81d4fa",
-    secondary: "#b6ffff",
-    highlight: "#ffee58",
+    primary: "#4fc3f7",
+    secondary: "#03a9f4",
+    highlight: "#ff7043",
     textColor: "#000000",
   },
   dark: {
-    primary: "#222831",
-    secondary: "#424277",
+    primary: "#263238",
+    secondary: "#455a64",
     highlight: "#D81159",
     textColor: "#FFFFFF",
   },

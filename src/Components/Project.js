@@ -30,44 +30,43 @@ function Project(props) {
   };
   return (
     <a href={repoLink} style={{ textDecoration: "none" }}>
-      <Paper elevation={elevation}>
-        <Card
-          className={style.ProjectMain}
-          style={{
-            backgroundColor: props.currentTheme.primary,
-            border: "double",
-            borderColor: props.currentTheme.highlight,
-          }}
-          spacing={2}
-          onMouseEnter={() => setHighlight(true)}
-          onMouseLeave={() => setHighlight(false)}
-        >
-          <div className={style.CardHeader}>
-            <Typography
-              className={style.ProjectTitle}
-              style={{ color: props.currentTheme.textColor }}
-            >
-              {title}
-            </Typography>
-            <Avatar
-              style={{
-                width: "80px",
-                height: "80px",
-              }}
-              variant="rounded"
-            >
-              <img className={style.ProjectImage} src={projectIcon}></img>
-            </Avatar>
-          </div>
-          <CardContent className={style.ProjectInformation}>
-            <Typography
-              className={style.ProjectText}
-              style={{ color: props.currentTheme.textColor }}
-            >
-              {description}
-            </Typography>
-            <div style={{ flexGrow: 1 }} />
+      <Tooltip title="Github">
+        <Paper elevation={elevation}>
+          <Card
+            className={style.ProjectMain}
+            style={{
+              backgroundColor: props.currentTheme.primary,
+              border: "double",
+              borderColor: props.currentTheme.highlight,
+            }}
+            spacing={2}
+            onMouseEnter={() => setHighlight(true)}
+            onMouseLeave={() => setHighlight(false)}
+          >
             <Paper
+              className={style.CardHeader}
+              style={{
+                backgroundColor: props.currentTheme.secondary,
+              }}
+            >
+              <Typography
+                className={style.ProjectTitle}
+                style={{ color: props.currentTheme.textColor }}
+              >
+                {title}
+              </Typography>
+              <Avatar
+                style={{
+                  width: "80px",
+                  height: "80px",
+                }}
+                variant="rounded"
+              >
+                <img className={style.ProjectImage} src={projectIcon}></img>
+              </Avatar>
+            </Paper>
+            <Paper
+              className={style.ProjectInformation}
               style={{
                 backgroundColor: props.currentTheme.secondary,
                 marginTop: "10px",
@@ -75,30 +74,21 @@ function Project(props) {
               }}
             >
               <Typography
-                className={style.TechStackTitle}
+                className={style.ProjectText}
                 style={{ color: props.currentTheme.textColor }}
               >
-                Created With
+                {description}
               </Typography>
+              <div style={{ flexGrow: 1 }} />
+
               <TechStack
                 techStackIcons={techStack}
                 currentTheme={props.currentTheme}
               />
             </Paper>
-          </CardContent>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "row",
-            }}
-          >
-            <div style={{ flexGrow: 1 }}></div>
-            <Tooltip title={"Visit Repository"}>
-              <GitHub visibility={hover} />
-            </Tooltip>
-          </div>
-        </Card>
-      </Paper>
+          </Card>
+        </Paper>
+      </Tooltip>
     </a>
   );
 }

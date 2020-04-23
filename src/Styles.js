@@ -1,8 +1,8 @@
-import { makeStyles, ThemeProvider } from "@material-ui/core/styles";
-const useStyles = makeStyles((theme) => ({
+import { makeStyles, createMuiTheme } from "@material-ui/core/styles";
+
+export const useStyles = makeStyles((theme) => ({
   //main page
   main: {
-    height: "200vh",
     textAlign: "center",
   },
   WelcomeText: {
@@ -10,7 +10,6 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: "38vh",
     paddingLeft: "10px",
     paddingRight: "10px",
-    color: "#FFFFFF",
   },
 
   //Icon Stuff
@@ -29,16 +28,10 @@ const useStyles = makeStyles((theme) => ({
     alignSelf: "center",
     alignItems: "center",
   },
-  IconImage: {
-    color: "#D81159",
-  },
-
-  ProjectButton: {},
 
   //Projects Stuff
   ProjectsGridWrapper: { width: "75vw", marginTop: "50vh" },
   ProjectMain: {
-    borderColor: "#D81159",
     border: "solid",
     padding: "10px",
     hover: "",
@@ -59,17 +52,14 @@ const useStyles = makeStyles((theme) => ({
   ProjectTitle: {
     fontSize: 20,
     textAlign: "left",
-    color: "#FFFFFF",
   },
   ProjectText: {
     fontSize: 12,
     textAlign: "left",
-    color: "#FFFFFF",
   },
   TechStackTitle: {
     marginBottom: "10px",
     textAlign: "center",
-    color: "#FFFFFF",
   },
   TechStackMain: {
     display: "flex",
@@ -82,4 +72,17 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default useStyles;
+export const theme = {
+  light: {
+    primary: "#81d4fa",
+    secondary: "#b6ffff",
+    highlight: "#ffee58",
+    textColor: "#000000",
+  },
+  dark: {
+    primary: "#222831",
+    secondary: "#424277",
+    highlight: "#D81159",
+    textColor: "#FFFFFF",
+  },
+};

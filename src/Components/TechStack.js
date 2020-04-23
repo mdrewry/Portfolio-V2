@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Avatar, Tooltip } from "@material-ui/core/";
-import useStyles from "../Styles.js";
+import { useStyles } from "../Styles.js";
 function TechStack(props) {
   const style = useStyles();
   const [techIcons, setTechIcons] = useState(props.techStackIcons);

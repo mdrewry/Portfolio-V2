@@ -14,49 +14,28 @@ import Project from "./Components/Project.js";
 import ProjectsList from "./ProjectsList";
 function App() {
   const style = useStyles();
-  const [currentTheme, setCurrentTheme] = useState(theme.dark);
-  const [darkMode, setDarkMode] = useState(true);
-  const themeButton = (selectedMode) => {
-    if (selectedMode) {
-      setCurrentTheme(theme.light);
-    } else setCurrentTheme(theme.dark);
-
-    setDarkMode(!darkMode);
-  };
+  const [currentTheme, setCurrentTheme] = useState(theme[0]);
+  const [themeIndex, setThemeIndex] = useState(1);
   return (
     <div
       className={style.main}
       style={{ backgroundColor: currentTheme.primary }}
     >
       <div style={{ display: "flex", flexDirection: "row", position: "fixed" }}>
-        {darkMode && (
-          <Tooltip title="Light Mode">
-            <BrightnessLow
-              style={{
-                color: currentTheme.highlight,
-                fontSize: 40,
-                margin: "10px",
-              }}
-              onClick={() => {
-                themeButton(darkMode);
-              }}
-            ></BrightnessLow>
-          </Tooltip>
-        )}
-        {!darkMode && (
-          <Tooltip title="Dark Mode">
-            <BrightnessHigh
-              style={{
-                color: currentTheme.highlight,
-                fontSize: 40,
-                margin: "10px",
-              }}
-              onClick={() => {
-                themeButton(darkMode);
-              }}
-            ></BrightnessHigh>
-          </Tooltip>
-        )}
+        <Tooltip title="Next Theme">
+          <BrightnessHigh
+            style={{
+              color: currentTheme.highlight,
+              fontSize: 40,
+              margin: "10px",
+            }}
+            onClick={() => {
+              console.log(themeIndex);
+              setThemeIndex((themeIndex + 1) % theme.length);
+              setCurrentTheme(theme[themeIndex]);
+            }}
+          ></BrightnessHigh>
+        </Tooltip>
         <div style={{ flexGrow: 1 }} />
       </div>
       <Typography

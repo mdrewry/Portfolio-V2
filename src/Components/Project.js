@@ -1,13 +1,5 @@
 import React, { useState } from "react";
-import {
-  Card,
-  CardContent,
-  Typography,
-  Avatar,
-  Paper,
-  Tooltip,
-} from "@material-ui/core/";
-import { GitHub } from "@material-ui/icons";
+import { Typography, Avatar, Paper, Tooltip } from "@material-ui/core/";
 import TechStack from "./TechStack.js";
 import { useStyles } from "../Styles.js";
 function Project(props) {

@@ -5,6 +5,16 @@ export const useStyles = makeStyles((theme) => ({
   main: {
     textAlign: "center",
   },
+  ContactFormMain: {
+    width: "40vw",
+    border: "solid",
+    padding: "10px",
+  },
+  FormInputWrapper: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-evenly",
+  },
   WelcomeText: {
     fontSize: "25px",
     paddingTop: "38vh",

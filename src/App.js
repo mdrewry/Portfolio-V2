@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { animateScroll as scroll } from "react-scroll";
-import { BrightnessLow, BrightnessHigh } from "@material-ui/icons";
+import { BrightnessHigh } from "@material-ui/icons";
 import {
   Typography,
   Grid,
@@ -11,6 +11,7 @@ import {
 import { useStyles, theme } from "./Styles.js";
 import IconBar from "./Components/IconBar.js";
 import Project from "./Components/Project.js";
+import ContactForm from "./Components/ContactForm.js";
 import ProjectsList from "./ProjectsList";
 function App() {
   const style = useStyles();
@@ -30,12 +31,12 @@ function App() {
               padding: "10px",
             }}
             onClick={() => {
-              console.log(themeIndex);
               setThemeIndex((themeIndex + 1) % theme.length);
               setCurrentTheme(theme[themeIndex]);
             }}
-          ></BrightnessHigh>
+          />
         </Tooltip>
+        <ContactForm currentTheme={currentTheme} />
         <div style={{ flexGrow: 1 }} />
       </div>
       <Typography

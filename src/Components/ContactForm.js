@@ -28,9 +28,7 @@ const ContactForm = (props) => {
     emailjs
       .send("gmail", "template_7L4JoTk5", input, "user_EQyjXWIQtaTgD1oTvx95a")
       .then(
-        function (response) {
-          console.log("SUCCESS!", response.status, response.text);
-        },
+        function (response) {},
         function (err) {
           console.log("FAILED...", err);
         }

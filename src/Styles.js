@@ -6,7 +6,6 @@ export const useStyles = makeStyles((theme) => ({
     textAlign: "center",
   },
   ContactFormMain: {
-    width: "40vw",
     border: "solid",
     padding: "10px",
   },

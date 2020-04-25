@@ -30,11 +30,20 @@ export const useStyles = makeStyles((theme) => ({
   },
 
   //Projects Stuff
-  ProjectsGridWrapper: { width: "75vw", marginTop: "50vh" },
+  ProjectsGridWrapper: {
+    width: "75vw",
+    marginTop: "50vh",
+  },
+  ProjectsGrid: {
+    paddingBottom: "5vh",
+  },
   ProjectMain: {
     border: "solid",
     padding: "10px",
     hover: "",
+    height: "100%",
+    display: "flex",
+    flexDirection: "column",
   },
   CardHeader: {
     display: "flex",
@@ -46,8 +55,7 @@ export const useStyles = makeStyles((theme) => ({
   ProjectInformation: {
     display: "flex",
     flexDirection: "column",
-    justifyContent: "space-between",
-    minHeight: "24vh",
+    flexGrow: 1,
   },
   ProjectImage: { height: "80px" },
   ProjectTitle: {
@@ -57,6 +65,7 @@ export const useStyles = makeStyles((theme) => ({
   ProjectText: {
     fontSize: 12,
     textAlign: "left",
+    flexGrow: 1,
   },
   TechStackTitle: {
     marginBottom: "10px",

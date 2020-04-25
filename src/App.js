@@ -27,7 +27,7 @@ function App() {
             style={{
               color: currentTheme.highlight,
               fontSize: 40,
-              margin: "10px",
+              padding: "10px",
             }}
             onClick={() => {
               console.log(themeIndex);
@@ -58,7 +58,7 @@ function App() {
         Projects
       </Button>
       <Container className={style.ProjectsGridWrapper}>
-        <Grid className={style.ProjectsGrid} container spacing={6}>
+        <Grid className={style.ProjectsGrid} container spacing={8}>
           {ProjectsList.map((ProjectI) => (
             <Grid
               id={ProjectI.key}

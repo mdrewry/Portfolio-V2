@@ -31,62 +31,58 @@ function Project(props) {
   return (
     <a href={repoLink} style={{ textDecoration: "none" }}>
       <Tooltip title="Github">
-        <Paper elevation={elevation}>
-          <Card
-            className={style.ProjectMain}
+        <Paper
+          elevation={elevation}
+          className={style.ProjectMain}
+          style={{
+            backgroundColor: props.currentTheme.primary,
+            borderColor: props.currentTheme.highlight,
+          }}
+          spacing={2}
+          onMouseEnter={() => setHighlight(true)}
+          onMouseLeave={() => setHighlight(false)}
+        >
+          <Paper
+            className={style.CardHeader}
             style={{
-              backgroundColor: props.currentTheme.primary,
-              border: "double",
-              borderColor: props.currentTheme.highlight,
+              backgroundColor: props.currentTheme.secondary,
             }}
-            spacing={2}
-            onMouseEnter={() => setHighlight(true)}
-            onMouseLeave={() => setHighlight(false)}
           >
-            <Paper
-              className={style.CardHeader}
-              style={{
-                backgroundColor: props.currentTheme.secondary,
-              }}
+            <Typography
+              className={style.ProjectTitle}
+              style={{ color: props.currentTheme.textColor }}
             >
-              <Typography
-                className={style.ProjectTitle}
-                style={{ color: props.currentTheme.textColor }}
-              >
-                {title}
-              </Typography>
-              <Avatar
-                style={{
-                  width: "80px",
-                  height: "80px",
-                }}
-                variant="rounded"
-              >
-                <img className={style.ProjectImage} src={projectIcon}></img>
-              </Avatar>
-            </Paper>
-            <Paper
-              className={style.ProjectInformation}
+              {title}
+            </Typography>
+            <Avatar
               style={{
-                backgroundColor: props.currentTheme.secondary,
-                marginTop: "10px",
-                padding: "10px",
+                width: "80px",
+                height: "80px",
               }}
+              variant="rounded"
             >
-              <Typography
-                className={style.ProjectText}
-                style={{ color: props.currentTheme.textColor }}
-              >
-                {description}
-              </Typography>
-              <div style={{ flexGrow: 1 }} />
-
-              <TechStack
-                techStackIcons={techStack}
-                currentTheme={props.currentTheme}
-              />
-            </Paper>
-          </Card>
+              <img className={style.ProjectImage} src={projectIcon}></img>
+            </Avatar>
+          </Paper>
+          <Paper
+            className={style.ProjectInformation}
+            style={{
+              backgroundColor: props.currentTheme.secondary,
+              marginTop: "10px",
+              padding: "10px",
+            }}
+          >
+            <Typography
+              className={style.ProjectText}
+              style={{ color: props.currentTheme.textColor }}
+            >
+              {description}
+            </Typography>
+            <TechStack
+              techStackIcons={techStack}
+              currentTheme={props.currentTheme}
+            />
+          </Paper>
         </Paper>
       </Tooltip>
     </a>

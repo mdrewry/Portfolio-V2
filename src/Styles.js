@@ -11,7 +11,6 @@ export const useStyles = makeStyles((theme) => ({
   FormInputWrapper: {
     flexDirection: "row",
   },
-  FormInput: { margin: "5px" },
   SubmitButtonWrapper: {
     display: "flex",
     flexDirection: "row",

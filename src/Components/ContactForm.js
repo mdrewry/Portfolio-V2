@@ -72,6 +72,7 @@ const ContactForm = (props) => {
                   className={style.FormInput}
                   autoComplete="disabled"
                   style={{
+                    margin: "5px",
                     backgroundColor: props.currentTheme.secondary,
                   }}
                   color="secondary"
@@ -89,6 +90,7 @@ const ContactForm = (props) => {
                   autoComplete="disabled"
                   className={style.FormInput}
                   style={{
+                    margin: "5px",
                     backgroundColor: props.currentTheme.secondary,
                   }}
                   value={email}
@@ -104,6 +106,7 @@ const ContactForm = (props) => {
               color="secondary"
               className={style.FormInput}
               style={{
+                margin: "5px",
                 backgroundColor: props.currentTheme.secondary,
               }}
               value={subject}
@@ -116,6 +119,7 @@ const ContactForm = (props) => {
               color="secondary"
               className={style.FormInput}
               style={{
+                margin: "5px",
                 backgroundColor: props.currentTheme.secondary,
               }}
               value={message}

@@ -11,6 +11,7 @@ import {
 import { Send, ContactMail } from "@material-ui/icons";
 import emailjs from "emailjs-com";
 import { useStyles } from "../Styles.js";
+import info from "../config.js";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -31,12 +32,7 @@ const ContactForm = (props) => {
       subject: subject,
       message: message,
     };
-    emailjs.send(
-      "gmail",
-      "template_7L4JoTk5",
-      input,
-      "user_EQyjXWIQtaTgD1oTvx95a"
-    );
+    emailjs.send("gmail", "template_7L4JoTk5", input, info.userKey);
     handleClose();
   }
   const handleClose = () => {
@@ -80,7 +76,7 @@ const ContactForm = (props) => {
                   }}
                   color="secondary"
                   value={name}
-                  fullWidth={1}
+                  fullWidth={true}
                   required
                   onChange={(e) => setName(e.target.value)}
                   variant="filled"
@@ -97,7 +93,7 @@ const ContactForm = (props) => {
                   }}
                   value={email}
                   required
-                  fullWidth={1}
+                  fullWidth={true}
                   onChange={(e) => setEmail(e.target.value)}
                   variant="filled"
                 ></TextField>
@@ -111,7 +107,7 @@ const ContactForm = (props) => {
                 backgroundColor: props.currentTheme.secondary,
               }}
               value={subject}
-              fullWidth={1}
+              fullWidth={true}
               onChange={(e) => setSubject(e.target.value)}
               variant="filled"
             ></TextField>
@@ -123,7 +119,7 @@ const ContactForm = (props) => {
                 backgroundColor: props.currentTheme.secondary,
               }}
               value={message}
-              fullWidth={1}
+              fullWidth={true}
               required
               multiline
               rows={5}

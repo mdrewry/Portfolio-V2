@@ -62,7 +62,7 @@ function App() {
         <Grid className={style.ProjectsGrid} container spacing={8}>
           {ProjectsList.map((ProjectI) => (
             <Grid
-              id={ProjectI.key}
+              key={ProjectI.key}
               className={style.IndividualProject}
               item
               xs={12}

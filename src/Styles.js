@@ -7,12 +7,14 @@ export const useStyles = makeStyles((theme) => ({
   },
   ContactFormMain: {
     border: "solid",
-    padding: "10px",
   },
   FormInputWrapper: {
+    flexDirection: "row",
+  },
+  FormInput: { margin: "5px" },
+  SubmitButtonWrapper: {
     display: "flex",
     flexDirection: "row",
-    justifyContent: "space-evenly",
   },
   WelcomeText: {
     fontSize: "25px",

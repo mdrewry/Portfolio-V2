@@ -10,8 +10,8 @@ import {
 } from "@material-ui/core/";
 import { Send, ContactMail } from "@material-ui/icons";
 import emailjs from "emailjs-com";
-import { useStyles } from "../Styles.js";
 import info from "../config.js";
+import { useStyles } from "../Styles.js";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;

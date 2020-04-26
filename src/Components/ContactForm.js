@@ -7,6 +7,8 @@ import {
   DialogContent,
   Grid,
   Slide,
+  SnackbarContent,
+  Snackbar,
 } from "@material-ui/core/";
 import { Send, ContactMail } from "@material-ui/icons";
 import emailjs from "emailjs-com";
@@ -24,6 +26,7 @@ const ContactForm = (props) => {
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
   const [openDialog, setOpenDialog] = useState(false);
+  const [emailSent, setEmailSent] = useState(false);
   async function sendMessage(e) {
     e.preventDefault();
     const input = {
@@ -33,10 +36,14 @@ const ContactForm = (props) => {
       message: message,
     };
     emailjs.send("gmail", "template_7L4JoTk5", input, info.userKey);
+    setEmailSent(true);
     handleClose();
   }
   const handleClose = () => {
     setOpenDialog(false);
+  };
+  const handleCloseSend = () => {
+    setEmailSent(false);
   };
   return (
     <div>
@@ -52,6 +59,17 @@ const ContactForm = (props) => {
           }}
         />
       </Tooltip>
+      <Snackbar
+        open={emailSent}
+        autoHideDuration={1500}
+        onClose={handleCloseSend}
+      >
+        <SnackbarContent
+          style={{ backgroundColor: props.currentTheme.highlight }}
+          message={"Message Sent!"}
+          action={<Send />}
+        />
+      </Snackbar>
       <Dialog
         open={openDialog}
         onClose={handleClose}
@@ -98,7 +116,7 @@ const ContactForm = (props) => {
                   fullWidth={true}
                   onChange={(e) => setEmail(e.target.value)}
                   variant="filled"
-                ></TextField>
+                />
               </Grid>
             </Grid>
             <TextField
@@ -113,7 +131,7 @@ const ContactForm = (props) => {
               fullWidth={true}
               onChange={(e) => setSubject(e.target.value)}
               variant="filled"
-            ></TextField>
+            />
             <TextField
               label="Message"
               color="secondary"
@@ -129,7 +147,7 @@ const ContactForm = (props) => {
               rows={5}
               onChange={(e) => setMessage(e.target.value)}
               variant="filled"
-            ></TextField>
+            />
             <div className={style.SubmitButtonWrapper}>
               <div style={{ flexGrow: 1 }}></div>
               <Button

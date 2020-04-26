@@ -65,14 +65,14 @@ const ContactForm = (props) => {
           }}
         >
           <form onSubmit={(e) => sendMessage(e)}>
-            <Grid className={style.FormInputWrapper} spacing={2} container>
+            <Grid className={style.FormInputWrapper} spacing={1} container>
               <Grid item xs={12} md={6} lg={6}>
                 <TextField
                   label="Name"
                   className={style.FormInput}
                   autoComplete="disabled"
                   style={{
-                    margin: "5px",
+                    marginTop: "5px",
                     backgroundColor: props.currentTheme.secondary,
                   }}
                   color="secondary"
@@ -90,7 +90,7 @@ const ContactForm = (props) => {
                   autoComplete="disabled"
                   className={style.FormInput}
                   style={{
-                    margin: "5px",
+                    marginTop: "5px",
                     backgroundColor: props.currentTheme.secondary,
                   }}
                   value={email}
@@ -106,7 +106,7 @@ const ContactForm = (props) => {
               color="secondary"
               className={style.FormInput}
               style={{
-                margin: "5px",
+                marginTop: "5px",
                 backgroundColor: props.currentTheme.secondary,
               }}
               value={subject}
@@ -119,7 +119,7 @@ const ContactForm = (props) => {
               color="secondary"
               className={style.FormInput}
               style={{
-                margin: "5px",
+                marginTop: "5px",
                 backgroundColor: props.currentTheme.secondary,
               }}
               value={message}

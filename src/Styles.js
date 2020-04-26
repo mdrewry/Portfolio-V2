@@ -1,6 +1,6 @@
-import { makeStyles, createMuiTheme } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 
-export const useStyles = makeStyles((theme) => ({
+export const useStyles = makeStyles(() => ({
   //main page
   main: {
     textAlign: "center",
@@ -144,16 +144,23 @@ export const theme = [
   },
   {
     key: 7,
-    primary: "#4fc3f7",
-    secondary: "#03a9f4",
-    highlight: "#ff7043",
+    primary: "#f9f7f7",
+    secondary: "#dbe2ef",
+    highlight: "#3f72af",
     textColor: "#000000",
   },
   {
     key: 8,
-    primary: "#dbdbdb",
-    secondary: "#f0a500",
-    highlight: "#cf7500",
+    primary: "#222831",
+    secondary: "#393e46",
+    highlight: "#00adb5",
+    textColor: "#FFFFFF",
+  },
+  {
+    key: 9,
+    primary: "#07689f",
+    secondary: "#a2d5f2",
+    highlight: "#ff7e67",
     textColor: "#000000",
   },
 ];

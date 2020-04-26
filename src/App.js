@@ -33,6 +33,7 @@ function App() {
             onClick={() => {
               setThemeIndex((themeIndex + 1) % theme.length);
               setCurrentTheme(theme[themeIndex]);
+              console.log(themeIndex);
             }}
           />
         </Tooltip>

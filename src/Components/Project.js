@@ -4,7 +4,6 @@ import TechStack from "./TechStack.js";
 import { useStyles } from "../Styles.js";
 function Project(props) {
   const [elevation, setElevation] = useState(1);
-  const [hover, setHover] = useState("hidden");
   const style = useStyles();
   const title = props.title;
   const repoLink = props.repoLink;
@@ -12,11 +11,9 @@ function Project(props) {
   const techStack = props.techStack;
   const projectIcon = props.projectIcon;
   const setHighlight = (colorSelector) => {
-    if (colorSelector == true) {
-      setHover("visible");
+    if (colorSelector === true) {
       setElevation(24);
     } else {
-      setHover("hidden");
       setElevation(1);
     }
   };
@@ -53,7 +50,11 @@ function Project(props) {
               }}
               variant="rounded"
             >
-              <img className={style.ProjectImage} src={projectIcon}></img>
+              <img
+                className={style.ProjectImage}
+                alt="Project Image"
+                src={projectIcon}
+              ></img>
             </Avatar>
           </Paper>
           <Paper

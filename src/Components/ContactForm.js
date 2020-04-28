@@ -94,6 +94,9 @@ const ContactForm = (props) => {
                     backgroundColor: props.currentTheme.secondary,
                   }}
                   color="secondary"
+                  inputProps={{
+                    style: { color: props.currentTheme.textColor },
+                  }}
                   value={name}
                   fullWidth={true}
                   required
@@ -111,6 +114,9 @@ const ContactForm = (props) => {
                     marginTop: "5px",
                     backgroundColor: props.currentTheme.secondary,
                   }}
+                  inputProps={{
+                    style: { color: props.currentTheme.textColor },
+                  }}
                   value={email}
                   required
                   fullWidth={true}
@@ -127,6 +133,9 @@ const ContactForm = (props) => {
                 marginTop: "5px",
                 backgroundColor: props.currentTheme.secondary,
               }}
+              inputProps={{
+                style: { color: props.currentTheme.textColor },
+              }}
               value={subject}
               fullWidth={true}
               onChange={(e) => setSubject(e.target.value)}
@@ -139,6 +148,9 @@ const ContactForm = (props) => {
               style={{
                 marginTop: "5px",
                 backgroundColor: props.currentTheme.secondary,
+              }}
+              inputProps={{
+                style: { color: props.currentTheme.textColor },
               }}
               value={message}
               fullWidth={true}

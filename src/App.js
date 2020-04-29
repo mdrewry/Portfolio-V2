@@ -12,6 +12,7 @@ import { useStyles, theme } from "./Styles.js";
 import IconBar from "./Components/IconBar.js";
 import Project from "./Components/Project.js";
 import ContactForm from "./Components/ContactForm.js";
+import AboutMe from "./Components/AboutMe.js";
 import ProjectsList from "./ProjectsList";
 function App() {
   const style = useStyles();
@@ -28,7 +29,8 @@ function App() {
             style={{
               color: currentTheme.highlight,
               fontSize: 40,
-              padding: "10px",
+              paddingLeft: "10px",
+              paddingTop: "10px",
             }}
             onClick={() => {
               setThemeIndex((themeIndex + 1) % theme.length);
@@ -37,6 +39,7 @@ function App() {
             }}
           />
         </Tooltip>
+        <AboutMe currentTheme={currentTheme} />
         <ContactForm currentTheme={currentTheme} />
         <div style={{ flexGrow: 1 }} />
       </div>

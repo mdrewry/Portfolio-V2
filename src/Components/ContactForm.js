@@ -154,7 +154,6 @@ const ContactForm = (props) => {
                   }}
                   inputProps={{
                     style: {
-                      input: props.currentTheme.textColor,
                       color: props.currentTheme.textColor,
                     },
                   }}
@@ -178,7 +177,7 @@ const ContactForm = (props) => {
                   <Typography
                     style={{
                       color: props.currentTheme.textColor,
-                      marginRight: "10px",
+                      fontSize: 15,
                     }}
                   >
                     Email mdrewry0@gmail.com

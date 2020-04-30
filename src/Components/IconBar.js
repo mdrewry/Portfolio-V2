@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  Twitter,
-  Email,
-  AccountBox,
-  GitHub,
-  LinkedIn,
-} from "@material-ui/icons";
+import { AccountBox, GitHub, LinkedIn } from "@material-ui/icons";
 import { useStyles } from "../Styles.js";
 import Tooltip from "@material-ui/core/Tooltip";
 
@@ -13,7 +7,6 @@ function IconBar(props) {
   const style = useStyles();
   const gitLink = "https://github.com/mdrewry";
   const linkedInLink = "https://www.linkedin.com/in/mark-drewry-242850195/";
-  const twitterLink = "https://www.linkedin.com/in/mark-drewry-242850195/";
   const setClipboard = (e) => {
     const text = document.createElement("textarea");
     text.innerText = "mdrewry0@gmail.com";

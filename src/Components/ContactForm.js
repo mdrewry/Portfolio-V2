@@ -9,8 +9,10 @@ import {
   Slide,
   SnackbarContent,
   Snackbar,
+  Typography,
+  Link,
 } from "@material-ui/core/";
-import { Send, ContactMail } from "@material-ui/icons";
+import { Send } from "@material-ui/icons";
 import emailjs from "emailjs-com";
 import info from "../config.js";
 import { useStyles } from "../Styles.js";
@@ -47,18 +49,25 @@ const ContactForm = (props) => {
   };
   return (
     <div>
-      <Tooltip title={"Contact Me"}>
-        <ContactMail
+      <Link
+        style={{ color: props.currentTheme.highlight }}
+        onClick={(e) => e.preventDefault()}
+      >
+        <Typography
           style={{
-            color: props.currentTheme.highlight,
-            fontSize: 40,
-            paddingTop: "10px",
+            color: props.currentTheme.textColor,
+            fontSize: 20,
+            "&:hover": {
+              color: props.currentTheme.highlight,
+            },
           }}
           onClick={() => {
             setOpenDialog(true);
           }}
-        />
-      </Tooltip>
+        >
+          Contact Me
+        </Typography>
+      </Link>
       <Snackbar
         open={emailSent}
         autoHideDuration={1500}
@@ -87,10 +96,8 @@ const ContactForm = (props) => {
               <Grid item xs={12} md={6} lg={6}>
                 <TextField
                   label="Name"
-                  className={style.FormInput}
                   autoComplete="disabled"
                   style={{
-                    marginTop: "5px",
                     backgroundColor: props.currentTheme.secondary,
                   }}
                   color="secondary"
@@ -109,9 +116,7 @@ const ContactForm = (props) => {
                   label="Email"
                   color="secondary"
                   autoComplete="disabled"
-                  className={style.FormInput}
                   style={{
-                    marginTop: "5px",
                     backgroundColor: props.currentTheme.secondary,
                   }}
                   inputProps={{
@@ -124,56 +129,74 @@ const ContactForm = (props) => {
                   variant="filled"
                 />
               </Grid>
+              <Grid item xs={12} md={12} lg={12}>
+                <TextField
+                  label="Subject"
+                  color="secondary"
+                  style={{
+                    backgroundColor: props.currentTheme.secondary,
+                  }}
+                  inputProps={{
+                    style: { color: props.currentTheme.textColor },
+                  }}
+                  value={subject}
+                  fullWidth={true}
+                  onChange={(e) => setSubject(e.target.value)}
+                  variant="filled"
+                />
+              </Grid>
+              <Grid item xs={12} md={12} lg={12}>
+                <TextField
+                  label="Message"
+                  color="secondary"
+                  style={{
+                    backgroundColor: props.currentTheme.secondary,
+                  }}
+                  inputProps={{
+                    style: {
+                      input: props.currentTheme.textColor,
+                      color: props.currentTheme.textColor,
+                    },
+                  }}
+                  value={message}
+                  fullWidth={true}
+                  required
+                  multiline
+                  rows={5}
+                  onChange={(e) => setMessage(e.target.value)}
+                  variant="filled"
+                />
+              </Grid>
+              <Grid item xs={12} md={12} lg={12}>
+                <div
+                  className={style.SubmitButtonWrapper}
+                  style={{
+                    backgroundColor: props.currentTheme.secondary,
+                    padding: "10px",
+                  }}
+                >
+                  <Typography
+                    style={{
+                      color: props.currentTheme.textColor,
+                      marginRight: "10px",
+                    }}
+                  >
+                    Email mdrewry0@gmail.com
+                  </Typography>
+                  <div style={{ flexGrow: 1 }} />
+                  <Button
+                    type="submit"
+                    variant="contained"
+                    style={{
+                      backgroundColor: props.currentTheme.highlight,
+                      color: props.currentTheme.textColor,
+                    }}
+                  >
+                    <Send />
+                  </Button>
+                </div>
+              </Grid>
             </Grid>
-            <TextField
-              label="Subject"
-              color="secondary"
-              className={style.FormInput}
-              style={{
-                marginTop: "5px",
-                backgroundColor: props.currentTheme.secondary,
-              }}
-              inputProps={{
-                style: { color: props.currentTheme.textColor },
-              }}
-              value={subject}
-              fullWidth={true}
-              onChange={(e) => setSubject(e.target.value)}
-              variant="filled"
-            />
-            <TextField
-              label="Message"
-              color="secondary"
-              className={style.FormInput}
-              style={{
-                marginTop: "5px",
-                backgroundColor: props.currentTheme.secondary,
-              }}
-              inputProps={{
-                style: { color: props.currentTheme.textColor },
-              }}
-              value={message}
-              fullWidth={true}
-              required
-              multiline
-              rows={5}
-              onChange={(e) => setMessage(e.target.value)}
-              variant="filled"
-            />
-            <div className={style.SubmitButtonWrapper}>
-              <div style={{ flexGrow: 1 }}></div>
-              <Button
-                type="submit"
-                variant="contained"
-                style={{
-                  marginTop: "5px",
-                  backgroundColor: props.currentTheme.highlight,
-                  color: props.currentTheme.textColor,
-                }}
-              >
-                <Send />
-              </Button>
-            </div>
           </form>
         </DialogContent>
       </Dialog>

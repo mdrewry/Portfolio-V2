@@ -25,38 +25,21 @@ function IconBar(props) {
   return (
     <div className={style.IconBarMainWrapper}>
       <div className={style.IconBarMain}>
-        <a href={""}>
-          <Tooltip title="Copy Email">
-            <Email
-              style={{ color: props.currentTheme.highlight }}
-              className={style.IconImage}
-              onClick={(e) => setClipboard()}
-            ></Email>
-          </Tooltip>
-        </a>
-        <a href={twitterLink}>
-          <Tooltip title="Twitter">
-            <Twitter
-              className={style.IconImage}
-              style={{ color: props.currentTheme.highlight }}
-            ></Twitter>
-          </Tooltip>
-        </a>
-        <a href={"Resume.pdf"} target="blank">
-          <Tooltip title="Download Resume">
-            <AccountBox
-              className={style.IconImage}
-              fontSize="large"
-              style={{ color: props.currentTheme.highlight }}
-            ></AccountBox>
-          </Tooltip>
-        </a>
         <a href={gitLink}>
           <Tooltip title="Github">
             <GitHub
               className={style.IconImage}
               style={{ color: props.currentTheme.highlight }}
             ></GitHub>
+          </Tooltip>
+        </a>
+        <a href={"Resume.pdf"} target="blank">
+          <Tooltip title="Open Resume">
+            <AccountBox
+              className={style.IconImage}
+              fontSize="large"
+              style={{ color: props.currentTheme.highlight }}
+            ></AccountBox>
           </Tooltip>
         </a>
         <a href={linkedInLink}>

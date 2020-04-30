@@ -23,19 +23,24 @@ function App() {
       className={style.main}
       style={{ backgroundColor: currentTheme.primary }}
     >
-      <div style={{ display: "flex", flexDirection: "row", position: "fixed" }}>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          position: "fixed",
+          alignItems: "center",
+          padding: "10px",
+        }}
+      >
         <Tooltip title="Next Theme">
           <BrightnessHigh
             style={{
               color: currentTheme.highlight,
               fontSize: 40,
-              paddingLeft: "10px",
-              paddingTop: "10px",
             }}
             onClick={() => {
               setThemeIndex((themeIndex + 1) % theme.length);
               setCurrentTheme(theme[themeIndex]);
-              console.log(themeIndex);
             }}
           />
         </Tooltip>

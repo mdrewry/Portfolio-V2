@@ -6,6 +6,7 @@ import {
   Slide,
   Typography,
   Paper,
+  Link,
 } from "@material-ui/core/";
 import { AccountCircle } from "@material-ui/icons";
 import { useStyles } from "../Styles.js";
@@ -17,23 +18,30 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 const AboutMe = (props) => {
   const style = useStyles();
   const [openDialog, setOpenDialog] = useState(false);
+
   const handleClose = () => {
     setOpenDialog(false);
   };
   return (
     <div>
-      <Tooltip title={"About Me"}>
-        <AccountCircle
+      <Link
+        style={{ color: props.currentTheme.highlight }}
+        onClick={(e) => e.preventDefault()}
+      >
+        <Typography
           style={{
-            color: props.currentTheme.highlight,
-            fontSize: 40,
-            padding: "10px",
+            color: props.currentTheme.textColor,
+            fontSize: 20,
+            marginLeft: "10px",
+            marginRight: "10px",
           }}
           onClick={() => {
             setOpenDialog(true);
           }}
-        />
-      </Tooltip>
+        >
+          About Me
+        </Typography>
+      </Link>
       <Dialog
         open={openDialog}
         onClose={handleClose}
@@ -56,10 +64,9 @@ const AboutMe = (props) => {
             <Typography
               style={{
                 textAlign: "center",
-                textDecoration: "underline",
                 textDecorationColor: props.currentTheme.highlight,
                 color: props.currentTheme.textColor,
-                fontSize: 20,
+                fontSize: 30,
               }}
             >
               About Me

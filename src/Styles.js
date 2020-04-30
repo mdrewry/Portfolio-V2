@@ -14,6 +14,7 @@ export const useStyles = makeStyles(() => ({
   SubmitButtonWrapper: {
     display: "flex",
     flexDirection: "row",
+    alignItems: "center",
   },
   WelcomeText: {
     fontSize: "25px",

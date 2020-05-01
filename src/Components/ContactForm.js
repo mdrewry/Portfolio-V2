@@ -11,6 +11,8 @@ import {
   Snackbar,
   Typography,
   Link,
+  makeStyles,
+  createStyles,
 } from "@material-ui/core/";
 import { Send } from "@material-ui/icons";
 import emailjs from "emailjs-com";
@@ -102,7 +104,14 @@ const ContactForm = (props) => {
                   }}
                   color="secondary"
                   inputProps={{
-                    style: { color: props.currentTheme.textColor },
+                    style: {
+                      color: props.currentTheme.textColor,
+                    },
+                  }}
+                  InputLabelProps={{
+                    style: {
+                      color: props.currentTheme.textColor,
+                    },
                   }}
                   value={name}
                   fullWidth={true}
@@ -122,6 +131,11 @@ const ContactForm = (props) => {
                   inputProps={{
                     style: { color: props.currentTheme.textColor },
                   }}
+                  InputLabelProps={{
+                    style: {
+                      color: props.currentTheme.textColor,
+                    },
+                  }}
                   value={email}
                   required
                   fullWidth={true}
@@ -139,6 +153,11 @@ const ContactForm = (props) => {
                   inputProps={{
                     style: { color: props.currentTheme.textColor },
                   }}
+                  InputLabelProps={{
+                    style: {
+                      color: props.currentTheme.textColor,
+                    },
+                  }}
                   value={subject}
                   fullWidth={true}
                   onChange={(e) => setSubject(e.target.value)}
@@ -153,6 +172,11 @@ const ContactForm = (props) => {
                     backgroundColor: props.currentTheme.secondary,
                   }}
                   inputProps={{
+                    style: {
+                      color: props.currentTheme.textColor,
+                    },
+                  }}
+                  InputLabelProps={{
                     style: {
                       color: props.currentTheme.textColor,
                     },

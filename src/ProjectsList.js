@@ -5,11 +5,13 @@ import PortfolioV2Icon from "./Res/ResumeV2Icon.PNG";
 import HeavenlyAstrologyIcon from "./Res/HeavenlyAstrologyIcon.ico";
 import AndroidStudioIcon from "./Res/AndroidStudioLogo2.png";
 import ReactIcon from "./Res/ReactIcon.png";
+import ReactNativeIcon from "./Res/ReactNativeIcon.png";
 import GoogleCloudIcon from "./Res/googleCloudIcon.png";
 import JavaIcon from "./Res/JavaLogo.png";
 import mongodbIcon from "./Res/mongodbIcon.png";
 import expressIcon from "./Res/expressIcon.png";
 import nodeIcon from "./Res/nodeIcon.png";
+import snapChefIcon from "./Res/SnapChefIcon.png";
 export default [
   {
     key: "1",
@@ -113,6 +115,22 @@ export default [
         key: "4",
         path: nodeIcon,
         name: "Node JS",
+      },
+    ],
+  },
+  {
+    key: "6",
+    title: "Snap Chef",
+    description:
+      "This app was a small summer project created with my friends. We wanted to get some experience using React Native and utilize the Google Vision API in an interesting way. The app allows a user to select or capture an image of available ingredients and return a filtered list of recipes. The google vision api is not as accurate as I would have hoped for but the app is complete and will only improve.",
+    repoLink: "https://github.com/mdrewry/SnapChef",
+    optionalLink: "",
+    projectIcon: snapChefIcon,
+    techStack: [
+      {
+        key: "1",
+        path: ReactNativeIcon,
+        name: "React Native",
       },
     ],
   },

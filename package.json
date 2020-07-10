@@ -12,6 +12,7 @@
     "express": "^4.17.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-particles-js": "^3.2.1",
     "react-remove-scroll-bar": "^2.0.0",
     "react-scripts": "3.4.1",
     "react-scroll": "^1.7.16"

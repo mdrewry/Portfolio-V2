@@ -4,6 +4,17 @@ export const useStyles = makeStyles(() => ({
   //main page
   main: {
     textAlign: "center",
+    position: "relative",
+  },
+  particleBackground: {
+    position: "fixed",
+    width: "100%",
+    height: "100%",
+    zIndex: "1",
+  },
+  content: {
+    position: "relative",
+    zIndex: "10",
   },
   ContactFormMain: {
     border: "solid",

@@ -7,14 +7,14 @@ function IconBar(props) {
   const style = useStyles();
   const gitLink = "https://github.com/mdrewry";
   const linkedInLink = "https://www.linkedin.com/in/mark-drewry-242850195/";
-  const setClipboard = (e) => {
-    const text = document.createElement("textarea");
-    text.innerText = "mdrewry0@gmail.com";
-    document.body.appendChild(text);
-    text.select();
-    document.execCommand("copy");
-    text.remove();
-  };
+  // const setClipboard = (e) => {
+  //   const text = document.createElement("textarea");
+  //   text.innerText = "mdrewry0@gmail.com";
+  //   document.body.appendChild(text);
+  //   text.select();
+  //   document.execCommand("copy");
+  //   text.remove();
+  // };
   return (
     <div className={style.IconBarMainWrapper}>
       <div className={style.IconBarMain}>

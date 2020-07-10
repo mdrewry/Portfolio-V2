@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import {
-  Tooltip,
   Dialog,
   DialogContent,
   Slide,
@@ -8,7 +7,7 @@ import {
   Paper,
   Link,
 } from "@material-ui/core/";
-import { AccountCircle } from "@material-ui/icons";
+
 import { useStyles } from "../Styles.js";
 
 const Transition = React.forwardRef(function Transition(props, ref) {

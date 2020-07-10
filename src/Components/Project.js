@@ -52,7 +52,7 @@ function Project(props) {
             >
               <img
                 className={style.ProjectImage}
-                alt="Project Image"
+                alt=""
                 src={projectIcon}
               ></img>
             </Avatar>

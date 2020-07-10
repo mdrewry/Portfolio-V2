@@ -19,7 +19,7 @@ function Project(props) {
   };
   return (
     <a href={repoLink} style={{ textDecoration: "none" }}>
-      <Tooltip title="Github">
+      <Tooltip title="Visit Github">
         <Paper
           elevation={elevation}
           className={style.ProjectMain}

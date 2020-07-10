@@ -49,11 +49,13 @@ const ContactForm = (props) => {
   return (
     <div>
       <Link
-        style={{ color: props.currentTheme.highlight }}
+        style={{ textDecoration: "none" }}
         onClick={(e) => e.preventDefault()}
       >
-        <Typography
+        <Button
+          variant="outlined"
           style={{
+            borderColor: props.currentTheme.highlight,
             color: props.currentTheme.textColor,
             fontSize: 20,
             "&:hover": {
@@ -65,7 +67,7 @@ const ContactForm = (props) => {
           }}
         >
           Contact Me
-        </Typography>
+        </Button>
       </Link>
       <Snackbar
         open={emailSent}

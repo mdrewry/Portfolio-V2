@@ -6,6 +6,7 @@ import {
   Typography,
   Paper,
   Link,
+  Button,
 } from "@material-ui/core/";
 
 import { useStyles } from "../Styles.js";
@@ -24,11 +25,13 @@ const AboutMe = (props) => {
   return (
     <div>
       <Link
-        style={{ color: props.currentTheme.highlight }}
+        style={{ textDecoration: "none" }}
         onClick={(e) => e.preventDefault()}
       >
-        <Typography
+        <Button
+          variant="outlined"
           style={{
+            borderColor: props.currentTheme.highlight,
             color: props.currentTheme.textColor,
             fontSize: 20,
             marginLeft: "10px",
@@ -39,7 +42,7 @@ const AboutMe = (props) => {
           }}
         >
           About Me
-        </Typography>
+        </Button>
       </Link>
       <Dialog
         open={openDialog}

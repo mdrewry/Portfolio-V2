@@ -1,7 +1,7 @@
 import React from "react";
 import { AccountBox, GitHub, LinkedIn } from "@material-ui/icons";
 import { useStyles } from "../Styles.js";
-import Tooltip from "@material-ui/core/Tooltip";
+import { Tooltip, IconButton } from "@material-ui/core";
 
 function IconBar(props) {
   const style = useStyles();
@@ -20,27 +20,33 @@ function IconBar(props) {
       <div className={style.IconBarMain}>
         <a href={gitLink}>
           <Tooltip title="Github">
-            <GitHub
-              className={style.IconImage}
-              style={{ color: props.currentTheme.highlight }}
-            ></GitHub>
+            <IconButton>
+              <GitHub
+                className={style.IconImage}
+                style={{ color: props.currentTheme.highlight }}
+              />
+            </IconButton>
           </Tooltip>
         </a>
         <a href={"Resume.pdf"} target="blank">
           <Tooltip title="Open Resume">
-            <AccountBox
-              className={style.IconImage}
-              fontSize="large"
-              style={{ color: props.currentTheme.highlight }}
-            ></AccountBox>
+            <IconButton>
+              <AccountBox
+                className={style.IconImage}
+                fontSize="large"
+                style={{ color: props.currentTheme.highlight }}
+              />
+            </IconButton>
           </Tooltip>
         </a>
         <a href={linkedInLink}>
           <Tooltip title="LinkedIn">
-            <LinkedIn
-              className={style.IconImage}
-              style={{ color: props.currentTheme.highlight }}
-            ></LinkedIn>
+            <IconButton>
+              <LinkedIn
+                className={style.IconImage}
+                style={{ color: props.currentTheme.highlight }}
+              />
+            </IconButton>
           </Tooltip>
         </a>
       </div>

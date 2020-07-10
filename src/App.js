@@ -7,6 +7,7 @@ import {
   Button,
   Container,
   Tooltip,
+  IconButton,
 } from "@material-ui/core";
 import Particles from "react-particles-js";
 import { useStyles, theme } from "./Styles.js";
@@ -56,16 +57,18 @@ function App() {
           }}
         >
           <Tooltip title="Next Theme">
-            <BrightnessHigh
-              style={{
-                color: currentTheme.highlight,
-                fontSize: 40,
-              }}
-              onClick={() => {
-                setThemeIndex((themeIndex + 1) % theme.length);
-                setCurrentTheme(theme[themeIndex]);
-              }}
-            />
+            <IconButton>
+              <BrightnessHigh
+                style={{
+                  color: currentTheme.highlight,
+                  fontSize: 40,
+                }}
+                onClick={() => {
+                  setThemeIndex((themeIndex + 1) % theme.length);
+                  setCurrentTheme(theme[themeIndex]);
+                }}
+              />
+            </IconButton>
           </Tooltip>
           <AboutMe currentTheme={currentTheme} />
           <ContactForm currentTheme={currentTheme} />

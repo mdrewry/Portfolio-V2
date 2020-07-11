@@ -8,6 +8,11 @@ import {
   Container,
   Tooltip,
   IconButton,
+  MenuList,
+  MenuItem,
+  Popper,
+  Grow,
+  ClickAwayListener,
 } from "@material-ui/core";
 import Particles from "react-particles-js";
 import { useStyles, theme } from "./Styles.js";
@@ -16,6 +21,7 @@ import Project from "./Components/Project.js";
 import ContactForm from "./Components/ContactForm.js";
 import AboutMe from "./Components/AboutMe.js";
 import ProjectsList from "./ProjectsList";
+import ThemeSelector from "./Components/ThemeSelector";
 function App() {
   const style = useStyles();
   const [currentTheme, setCurrentTheme] = useState(theme[0]);
@@ -56,20 +62,12 @@ function App() {
             padding: "10px",
           }}
         >
-          <Tooltip title="Next Theme">
-            <IconButton>
-              <BrightnessHigh
-                style={{
-                  color: currentTheme.highlight,
-                  fontSize: 40,
-                }}
-                onClick={() => {
-                  setThemeIndex((themeIndex + 1) % theme.length);
-                  setCurrentTheme(theme[themeIndex]);
-                }}
-              />
-            </IconButton>
-          </Tooltip>
+          <ThemeSelector
+            currentTheme={currentTheme}
+            setCurrentTheme={setCurrentTheme}
+            themeIndex={themeIndex}
+            setThemeIndex={setThemeIndex}
+          />
           <AboutMe currentTheme={currentTheme} />
           <ContactForm currentTheme={currentTheme} />
           <div style={{ flexGrow: 1 }} />

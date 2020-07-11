@@ -33,7 +33,7 @@ export const useStyles = makeStyles(() => ({
     paddingLeft: "10px",
     paddingRight: "10px",
   },
-
+  //ThemeSelector
   //Icon Stuff
   IconBarMainWrapper: {
     display: "flex",

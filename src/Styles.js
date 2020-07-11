@@ -143,7 +143,7 @@ export const theme = [
   {
     key: 4,
     primary: "#1b262c",
-    secondary: "#0f4c81",
+    secondary: "#006d77",
     highlight: "#ed6663",
     textColor: "#FFFFFF",
     name: "Salmon",

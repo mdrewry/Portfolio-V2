@@ -9,9 +9,11 @@ import {
   Grow,
   ClickAwayListener,
   Paper,
+  Typography,
 } from "@material-ui/core";
-import { theme } from "../Styles.js";
+import { theme, useStyles } from "../Styles.js";
 const ThemeSelector = ({ currentTheme, setThemeIndex, setCurrentTheme }) => {
+  const style = useStyles();
   const [open, setOpen] = useState(false);
   const anchorRef = useRef(null);
   const prevOpen = React.useRef(open);
@@ -61,10 +63,17 @@ const ThemeSelector = ({ currentTheme, setThemeIndex, setCurrentTheme }) => {
                 placement === "bottom" ? "center top" : "center bottom",
             }}
           >
-            <Paper>
+            <Paper
+              style={{
+                borderRadius: "10px",
+                backgroundColor: currentTheme.secondary,
+              }}
+            >
               <ClickAwayListener onClickAway={handleClose}>
                 <MenuList
-                  style={{ marginTop: "10px" }}
+                  style={{
+                    marginTop: "10px",
+                  }}
                   autoFocusItem={open}
                   id="menu-list-grow"
                 >
@@ -82,11 +91,42 @@ const ThemeSelector = ({ currentTheme, setThemeIndex, setCurrentTheme }) => {
                         setCurrentTheme(theme[t.key]);
                         setOpen(false);
                       }}
-                      style={{ display: "flex" }}
+                      style={{
+                        display: "flex",
+                      }}
                     >
-                      <FiberManualRecord style={{ color: t.primary }} />
-                      <FiberManualRecord style={{ color: t.secondary }} />
-                      <FiberManualRecord style={{ color: t.highlight }} />
+                      <Typography
+                        style={{
+                          marginRight: "10px",
+                          color: currentTheme.textColor,
+                        }}
+                      >
+                        {t.name}
+                      </Typography>
+                      <div className={style.Filler} />
+                      <div
+                        style={{
+                          backgroundColor: t.textColor,
+                          display: "flex",
+                          alignItems: "center",
+                          borderRadius: "10px",
+                          border: "2px",
+                          borderStyle: "solid",
+                          borderColor: t.highlight,
+                        }}
+                      >
+                        <FiberManualRecord
+                          style={{
+                            color: t.primary,
+                          }}
+                        />
+                        <FiberManualRecord
+                          style={{ color: t.secondary, borderColor: "#FFFFFF" }}
+                        />
+                        <FiberManualRecord
+                          style={{ color: t.highlight, borderColor: "#FFFFFF" }}
+                        />
+                      </div>
                     </MenuItem>
                   ))}
                 </MenuList>

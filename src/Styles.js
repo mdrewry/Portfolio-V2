@@ -34,6 +34,9 @@ export const useStyles = makeStyles(() => ({
     paddingRight: "10px",
   },
   //ThemeSelector
+  Filler: {
+    flexGrow: "1",
+  },
   //Icon Stuff
   IconBarMainWrapper: {
     display: "flex",
@@ -111,6 +114,7 @@ export const theme = [
     secondary: "#455a64",
     highlight: "#D81159",
     textColor: "#FFFFFF",
+    name: "Default",
   },
   {
     key: 1,
@@ -118,6 +122,7 @@ export const theme = [
     secondary: "#543864",
     highlight: "#ff6363",
     textColor: "#FFFFFF",
+    name: "Pomegranate",
   },
   {
     key: 2,
@@ -125,6 +130,7 @@ export const theme = [
     secondary: "#fcf7bb",
     highlight: "#543864",
     textColor: "#000000",
+    name: "Citrus",
   },
   {
     key: 3,
@@ -132,6 +138,7 @@ export const theme = [
     secondary: "#4a47a3",
     highlight: "#eab9c9",
     textColor: "#FFFFFF",
+    name: "Lavender",
   },
   {
     key: 4,
@@ -139,6 +146,7 @@ export const theme = [
     secondary: "#0f4c81",
     highlight: "#ed6663",
     textColor: "#FFFFFF",
+    name: "Salmon",
   },
   {
     key: 5,
@@ -146,6 +154,7 @@ export const theme = [
     secondary: "#f9fcfb",
     highlight: "#21bf73",
     textColor: "#000000",
+    name: "Watermelon",
   },
   {
     key: 6,
@@ -153,6 +162,7 @@ export const theme = [
     secondary: "#e4f9ff",
     highlight: "#fa163f",
     textColor: "#000000",
+    name: "Strawberry",
   },
   {
     key: 7,
@@ -160,6 +170,7 @@ export const theme = [
     secondary: "#dbe2ef",
     highlight: "#3f72af",
     textColor: "#000000",
+    name: "Cream",
   },
   {
     key: 8,
@@ -167,6 +178,7 @@ export const theme = [
     secondary: "#393e46",
     highlight: "#00adb5",
     textColor: "#FFFFFF",
+    name: "Space",
   },
   {
     key: 9,
@@ -174,5 +186,6 @@ export const theme = [
     secondary: "#a2d5f2",
     highlight: "#ff7e67",
     textColor: "#000000",
+    name: "Gators",
   },
 ];

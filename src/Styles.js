@@ -46,6 +46,9 @@ export const useStyles = makeStyles(() => ({
     alignSelf: "center",
     alignItems: "center",
   },
+  IconImage: {
+    fontSize: "40px",
+  },
 
   //Projects Stuff
   ProjectsGridWrapper: {

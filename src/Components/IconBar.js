@@ -1,5 +1,5 @@
 import React from "react";
-import { AccountBox, GitHub, LinkedIn } from "@material-ui/icons";
+import { Description, GitHub, LinkedIn } from "@material-ui/icons";
 import { useStyles } from "../Styles.js";
 import { Tooltip, IconButton } from "@material-ui/core";
 
@@ -31,7 +31,7 @@ function IconBar(props) {
         <a href={"Resume.pdf"} target="blank">
           <Tooltip title="Open Resume">
             <IconButton>
-              <AccountBox
+              <Description
                 className={style.IconImage}
                 fontSize="large"
                 style={{ color: props.currentTheme.highlight }}

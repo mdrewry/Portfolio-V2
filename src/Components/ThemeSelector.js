@@ -1,10 +1,6 @@
 import React, { useState, useRef, Fragment } from "react";
 import { BrightnessHigh, FiberManualRecord } from "@material-ui/icons";
 import {
-  Typography,
-  Grid,
-  Button,
-  Container,
   Tooltip,
   IconButton,
   MenuList,
@@ -14,13 +10,8 @@ import {
   ClickAwayListener,
   Paper,
 } from "@material-ui/core";
-import { useStyles, theme } from "../Styles.js";
-const ThemeSelector = ({
-  currentTheme,
-  themeIndex,
-  setThemeIndex,
-  setCurrentTheme,
-}) => {
+import { theme } from "../Styles.js";
+const ThemeSelector = ({ currentTheme, setThemeIndex, setCurrentTheme }) => {
   const [open, setOpen] = useState(false);
   const anchorRef = useRef(null);
   const prevOpen = React.useRef(open);
@@ -41,15 +32,16 @@ const ThemeSelector = ({
   return (
     <Fragment>
       <Tooltip title="Themes">
-        <IconButton>
+        <IconButton
+          onClick={() => {
+            setOpen((prevOpen) => !prevOpen);
+          }}
+        >
           <BrightnessHigh
             ref={anchorRef}
             style={{
               color: currentTheme.highlight,
               fontSize: 40,
-            }}
-            onClick={() => {
-              setOpen((prevOpen) => !prevOpen);
             }}
           />
         </IconButton>
@@ -76,8 +68,9 @@ const ThemeSelector = ({
                   autoFocusItem={open}
                   id="menu-list-grow"
                 >
-                  {theme.map((t) => (
+                  {theme.map((t, i) => (
                     <MenuItem
+                      key={i}
                       onClick={(event) => {
                         if (
                           anchorRef.current &&

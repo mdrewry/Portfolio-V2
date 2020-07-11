@@ -1,19 +1,6 @@
 import React, { useState } from "react";
 import { animateScroll as scroll } from "react-scroll";
-import { BrightnessHigh } from "@material-ui/icons";
-import {
-  Typography,
-  Grid,
-  Button,
-  Container,
-  Tooltip,
-  IconButton,
-  MenuList,
-  MenuItem,
-  Popper,
-  Grow,
-  ClickAwayListener,
-} from "@material-ui/core";
+import { Typography, Grid, Button, Container } from "@material-ui/core";
 import Particles from "react-particles-js";
 import { useStyles, theme } from "./Styles.js";
 import IconBar from "./Components/IconBar.js";
@@ -36,10 +23,10 @@ function App() {
         params={{
           particles: {
             number: {
-              value: 50,
+              value: 30,
             },
             size: {
-              value: 3,
+              value: 4,
             },
           },
           interactivity: {

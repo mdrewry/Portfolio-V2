@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Typography, Avatar, Paper, Tooltip } from "@material-ui/core/";
+import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import TechStack from "./TechStack.js";
 import { useStyles } from "../Styles.js";
 function Project(props) {
@@ -12,73 +13,80 @@ function Project(props) {
   const projectIcon = props.projectIcon;
   const setHighlight = (colorSelector) => {
     if (colorSelector === true) {
-      setElevation(24);
+      setElevation(10);
     } else {
       setElevation(1);
     }
   };
+  const theme = createMuiTheme();
+  theme.shadows[10] = `0px 0px 15px 1px ${props.currentTheme.highlight}`;
   return (
-    <a href={repoLink} style={{ textDecoration: "none" }}>
-      <Tooltip title="Visit Github">
-        <Paper
-          elevation={elevation}
-          className={style.ProjectMain}
-          style={{
-            backgroundColor: props.currentTheme.primary,
-            borderColor: props.currentTheme.highlight,
-          }}
-          spacing={2}
-          onMouseEnter={() => setHighlight(true)}
-          onMouseLeave={() => setHighlight(false)}
-        >
+    <MuiThemeProvider theme={theme}>
+      <a href={repoLink} style={{ textDecoration: "none" }}>
+        <Tooltip title="Visit Github">
           <Paper
-            className={style.CardHeader}
+            elevation={elevation}
+            className={style.ProjectMain}
             style={{
-              backgroundColor: props.currentTheme.secondary,
+              backgroundColor: props.currentTheme.primary,
+              borderColor: props.currentTheme.highlight,
             }}
+            spacing={2}
+            onMouseEnter={() => setHighlight(true)}
+            onMouseLeave={() => setHighlight(false)}
           >
-            <Typography
-              className={style.ProjectTitle}
-              style={{ color: props.currentTheme.textColor }}
-            >
-              {title}
-            </Typography>
-            <Avatar
+            <Paper
+              className={style.CardHeader}
               style={{
-                width: "80px",
-                height: "80px",
+                backgroundColor: props.currentTheme.secondary,
               }}
-              variant="rounded"
             >
-              <img
-                className={style.ProjectImage}
-                alt=""
-                src={projectIcon}
-              ></img>
-            </Avatar>
-          </Paper>
-          <Paper
-            className={style.ProjectInformation}
-            style={{
-              backgroundColor: props.currentTheme.secondary,
-              marginTop: "10px",
-              padding: "10px",
-            }}
-          >
-            <Typography
-              className={style.ProjectText}
-              style={{ color: props.currentTheme.textColor }}
+              <Typography
+                className={style.ProjectTitle}
+                style={{
+                  color: props.currentTheme.textColor,
+                  fontFamily: "Monospace",
+                }}
+              >
+                {title}
+              </Typography>
+              <Avatar
+                style={{
+                  width: "80px",
+                  height: "80px",
+                }}
+                variant="rounded"
+              >
+                <img
+                  className={style.ProjectImage}
+                  alt=""
+                  src={projectIcon}
+                ></img>
+              </Avatar>
+            </Paper>
+            <Paper
+              className={style.ProjectInformation}
+              style={{
+                backgroundColor: props.currentTheme.secondary,
+                marginTop: "10px",
+                padding: "15px",
+              }}
             >
-              {description}
-            </Typography>
-            <TechStack
-              techStackIcons={techStack}
-              currentTheme={props.currentTheme}
-            />
+              <Typography
+                className={style.ProjectText}
+                style={{ color: props.currentTheme.textColor }}
+              >
+                {description}
+              </Typography>
+              <TechStack
+                techStackIcons={techStack}
+                currentTheme={props.currentTheme}
+              />
+            </Paper>
           </Paper>
-        </Paper>
-      </Tooltip>
-    </a>
+        </Tooltip>
+      </a>
+    </MuiThemeProvider>
   );
 }
 

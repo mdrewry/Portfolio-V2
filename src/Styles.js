@@ -16,15 +16,8 @@ export const useStyles = makeStyles(() => ({
     position: "relative",
     zIndex: "10",
   },
-  ContactFormMain: {
-    border: "solid",
-  },
-  FormInputWrapper: {
-    flexDirection: "row",
-  },
   SubmitButtonWrapper: {
     display: "flex",
-    flexDirection: "row",
     alignItems: "center",
   },
   WelcomeText: {
@@ -88,9 +81,10 @@ export const useStyles = makeStyles(() => ({
     textAlign: "left",
   },
   ProjectText: {
-    fontSize: 12,
+    fontSize: 14,
     textAlign: "left",
     flexGrow: 1,
+    textIndent: "40px",
   },
   TechStackTitle: {
     marginBottom: "10px",
@@ -126,14 +120,6 @@ export const theme = [
   },
   {
     key: 2,
-    primary: "#f6d186",
-    secondary: "#fcf7bb",
-    highlight: "#543864",
-    textColor: "#000000",
-    name: "Citrus",
-  },
-  {
-    key: 3,
     primary: "#413c69",
     secondary: "#4a47a3",
     highlight: "#eab9c9",
@@ -141,12 +127,20 @@ export const theme = [
     name: "Lavender",
   },
   {
-    key: 4,
+    key: 3,
     primary: "#1b262c",
     secondary: "#006d77",
     highlight: "#ed6663",
     textColor: "#FFFFFF",
     name: "Salmon",
+  },
+  {
+    key: 4,
+    primary: "#222831",
+    secondary: "#393e46",
+    highlight: "#00adb5",
+    textColor: "#FFFFFF",
+    name: "Space",
   },
   {
     key: 5,
@@ -174,11 +168,11 @@ export const theme = [
   },
   {
     key: 8,
-    primary: "#222831",
-    secondary: "#393e46",
-    highlight: "#00adb5",
-    textColor: "#FFFFFF",
-    name: "Space",
+    primary: "#f6d186",
+    secondary: "#fcf7bb",
+    highlight: "#543864",
+    textColor: "#000000",
+    name: "Citrus",
   },
   {
     key: 9,

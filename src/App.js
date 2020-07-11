@@ -47,6 +47,7 @@ function App() {
             position: "fixed",
             alignItems: "center",
             padding: "10px",
+            zIndex: "300",
           }}
         >
           <ThemeSelector
@@ -61,7 +62,10 @@ function App() {
         </div>
         <Typography
           className={style.WelcomeText}
-          style={{ color: currentTheme.textColor }}
+          style={{
+            color: currentTheme.textColor,
+            fontFamily: "Monospace",
+          }}
         >
           Hello, my name is Mark Drewry. I am currently studying computer
           science at UF.

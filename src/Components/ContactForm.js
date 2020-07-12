@@ -10,11 +10,11 @@ import {
   Typography,
   Link,
 } from "@material-ui/core/";
+import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import { Send } from "@material-ui/icons";
 import emailjs from "emailjs-com";
 import info from "../config.js";
 import { useStyles } from "../Styles.js";
-
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
@@ -43,6 +43,11 @@ const ContactForm = (props) => {
   const handleCloseSend = () => {
     setEmailSent(false);
   };
+  const theme = createMuiTheme({
+    palette: {
+      primary: { 500: props.currentTheme.highlight },
+    },
+  });
   return (
     <div>
       <Link
@@ -93,80 +98,78 @@ const ContactForm = (props) => {
             style={{ marginBottom: "10px" }}
             onSubmit={(e) => sendMessage(e)}
           >
-            <TextField
-              label="Name"
-              autoComplete="disabled"
-              style={{
-                backgroundColor: props.currentTheme.secondary,
-                marginBottom: "10px",
-              }}
-              color="secondary"
-              inputProps={{
-                style: {
-                  color: props.currentTheme.textColor,
-                },
-              }}
-              InputLabelProps={{
-                style: {
-                  color: props.currentTheme.textColor,
-                },
-              }}
-              value={name}
-              fullWidth={true}
-              required
-              onChange={(e) => setName(e.target.value)}
-              variant="filled"
-            />
+            <ThemeProvider theme={theme}>
+              <TextField
+                label="Name"
+                autoComplete="disabled"
+                style={{
+                  backgroundColor: props.currentTheme.secondary,
+                  marginBottom: "10px",
+                }}
+                inputProps={{
+                  style: {
+                    color: props.currentTheme.textColor,
+                  },
+                }}
+                InputLabelProps={{
+                  style: {
+                    color: props.currentTheme.textColor,
+                  },
+                }}
+                value={name}
+                fullWidth={true}
+                required
+                onChange={(e) => setName(e.target.value)}
+                variant="filled"
+              />
 
-            <TextField
-              label="Email"
-              color="secondary"
-              autoComplete="disabled"
-              style={{
-                backgroundColor: props.currentTheme.secondary,
-                marginBottom: "10px",
-              }}
-              inputProps={{
-                style: { color: props.currentTheme.textColor },
-              }}
-              InputLabelProps={{
-                style: {
-                  color: props.currentTheme.textColor,
-                },
-              }}
-              value={email}
-              required
-              fullWidth={true}
-              onChange={(e) => setEmail(e.target.value)}
-              variant="filled"
-            />
+              <TextField
+                label="Email"
+                autoComplete="disabled"
+                style={{
+                  backgroundColor: props.currentTheme.secondary,
+                  marginBottom: "10px",
+                }}
+                inputProps={{
+                  style: { color: props.currentTheme.textColor },
+                }}
+                InputLabelProps={{
+                  style: {
+                    color: props.currentTheme.textColor,
+                  },
+                }}
+                value={email}
+                required
+                fullWidth={true}
+                onChange={(e) => setEmail(e.target.value)}
+                variant="filled"
+              />
 
-            <TextField
-              label="Message"
-              color="secondary"
-              style={{
-                backgroundColor: props.currentTheme.secondary,
-                marginBottom: "10px",
-              }}
-              inputProps={{
-                style: {
-                  color: props.currentTheme.textColor,
-                },
-              }}
-              InputLabelProps={{
-                style: {
-                  color: props.currentTheme.textColor,
-                },
-              }}
-              value={message}
-              fullWidth={true}
-              required
-              multiline
-              rows={5}
-              onChange={(e) => setMessage(e.target.value)}
-              variant="filled"
-            />
-
+              <TextField
+                label="Message"
+                style={{
+                  backgroundColor: props.currentTheme.secondary,
+                  marginBottom: "10px",
+                }}
+                inputProps={{
+                  style: {
+                    color: props.currentTheme.textColor,
+                  },
+                }}
+                InputLabelProps={{
+                  style: {
+                    color: props.currentTheme.textColor,
+                  },
+                }}
+                value={message}
+                fullWidth={true}
+                required
+                multiline
+                rows={5}
+                onChange={(e) => setMessage(e.target.value)}
+                variant="filled"
+              />
+            </ThemeProvider>
             <div
               className={style.SubmitButtonWrapper}
               style={{

@@ -87,7 +87,6 @@ export const useStyles = makeStyles(() => ({
     fontSize: 14,
     textAlign: "left",
     flexGrow: 1,
-    textIndent: "40px",
   },
   TechStackTitle: {
     marginBottom: "10px",

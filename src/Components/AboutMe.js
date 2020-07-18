@@ -72,7 +72,6 @@ const AboutMe = (props) => {
           <DialogContentText
             style={{
               color: props.currentTheme.textColor,
-              textIndent: "40px",
             }}
           >
             I am a 20 year old student currently studying computer science at

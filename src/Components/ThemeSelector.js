@@ -1,8 +1,8 @@
 import React, { useState, useRef, Fragment } from "react";
-import { BrightnessHigh, FiberManualRecord } from "@material-ui/icons";
+import { FiberManualRecord } from "@material-ui/icons";
 import {
   Tooltip,
-  IconButton,
+  Button,
   MenuList,
   MenuItem,
   Popper,
@@ -11,45 +11,39 @@ import {
   Paper,
   Typography,
 } from "@material-ui/core";
-import { theme, useStyles } from "../Styles.js";
-const ThemeSelector = ({ currentTheme, setThemeIndex, setCurrentTheme }) => {
-  const style = useStyles();
-  const [open, setOpen] = useState(false);
+
+const ThemeSelector = ({ themes, setCurrentTheme, style }) => {
+  const [openThemeSelector, setOpenThemeSelector] = useState(false);
   const anchorRef = useRef(null);
-  const prevOpen = React.useRef(open);
+  const prevOpen = React.useRef(openThemeSelector);
   const handleClose = (event) => {
     if (anchorRef.current && anchorRef.current.contains(event.target)) {
       return;
     }
-    setOpen(false);
+    setOpenThemeSelector(false);
   };
   React.useEffect(() => {
-    if (prevOpen.current === true && open === false) {
+    if (prevOpen.current === true && openThemeSelector === false) {
       anchorRef.current.focus();
     }
 
-    prevOpen.current = open;
-  }, [open]);
+    prevOpen.current = openThemeSelector;
+  }, [openThemeSelector]);
 
   return (
     <Fragment>
-      <Tooltip title="Themes">
-        <IconButton
-          onClick={() => {
-            setOpen((prevOpen) => !prevOpen);
-          }}
-        >
-          <BrightnessHigh
-            ref={anchorRef}
-            style={{
-              color: currentTheme.highlight,
-              fontSize: 40,
-            }}
-          />
-        </IconButton>
-      </Tooltip>
+      <Button
+        ref={anchorRef}
+        className={style.headerButton}
+        variant="outlined"
+        onClick={() => {
+          setOpenThemeSelector((prevOpen) => !prevOpen);
+        }}
+      >
+        Themes
+      </Button>
       <Popper
-        open={open}
+        open={openThemeSelector}
         anchorEl={anchorRef.current}
         role={undefined}
         transition
@@ -63,21 +57,14 @@ const ThemeSelector = ({ currentTheme, setThemeIndex, setCurrentTheme }) => {
                 placement === "bottom" ? "center top" : "center bottom",
             }}
           >
-            <Paper
-              style={{
-                borderRadius: "10px",
-                backgroundColor: currentTheme.secondary,
-              }}
-            >
+            <Paper className={style.themeSelectorMain}>
               <ClickAwayListener onClickAway={handleClose}>
                 <MenuList
-                  style={{
-                    marginTop: "10px",
-                  }}
-                  autoFocusItem={open}
+                  className={style.themeSelectorList}
+                  autoFocusItem={openThemeSelector}
                   id="menu-list-grow"
                 >
-                  {theme.map((t, i) => (
+                  {themes.map((t, i) => (
                     <MenuItem
                       key={i}
                       onClick={(event) => {
@@ -87,23 +74,17 @@ const ThemeSelector = ({ currentTheme, setThemeIndex, setCurrentTheme }) => {
                         ) {
                           return;
                         }
-                        setThemeIndex(t.key);
-                        setCurrentTheme(theme[t.key]);
-                        setOpen(false);
+                        setCurrentTheme(themes[t.key]);
+                        setOpenThemeSelector(false);
                       }}
                       style={{
                         display: "flex",
                       }}
                     >
-                      <Typography
-                        style={{
-                          marginRight: "10px",
-                          color: currentTheme.textColor,
-                        }}
-                      >
+                      <Typography className={style.themeName}>
                         {t.name}
                       </Typography>
-                      <div className={style.Filler} />
+                      <div className={style.filler} />
                       <div
                         style={{
                           backgroundColor: t.textColor,

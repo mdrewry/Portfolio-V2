@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, Fragment } from "react";
 import {
   Dialog,
   DialogContent,
@@ -13,67 +13,33 @@ const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
-const AboutMe = (props) => {
-  const [openDialog, setOpenDialog] = useState(false);
-
+const AboutMe = ({ style }) => {
+  const [openAboutMe, setOpenAboutMe] = useState(false);
   const handleClose = () => {
-    setOpenDialog(false);
+    setOpenAboutMe(false);
   };
   return (
-    <div>
-      <Link
-        style={{ textDecoration: "none" }}
-        onClick={(e) => e.preventDefault()}
+    <Fragment>
+      <Button
+        variant="outlined"
+        className={style.headerButtonMiddleLeft}
+        onClick={(e) => {
+          e.preventDefault();
+          setOpenAboutMe(true);
+        }}
       >
-        <Button
-          variant="outlined"
-          style={{
-            borderColor: props.currentTheme.highlight,
-            color: props.currentTheme.textColor,
-            fontSize: 15,
-            marginLeft: "10px",
-            marginRight: "10px",
-          }}
-          onClick={() => {
-            setOpenDialog(true);
-          }}
-        >
-          About Me
-        </Button>
-      </Link>
+        About Me
+      </Button>
       <Dialog
-        open={openDialog}
+        open={openAboutMe}
         onClose={handleClose}
         TransitionComponent={Transition}
       >
-        <DialogTitle
-          disableTypography={true}
-          style={{
-            textAlign: "center",
-            fontSize: 30,
-            backgroundColor: props.currentTheme.primary,
-            color: props.currentTheme.textColor,
-            border: "solid",
-            borderColor: props.currentTheme.highlight,
-            borderBottom: "none",
-            fontFamily: "Monospace",
-          }}
-        >
+        <DialogTitle disableTypography={true} className={style.dialogTitle}>
           About Me
         </DialogTitle>
-        <DialogContent
-          style={{
-            border: "solid",
-            backgroundColor: props.currentTheme.primary,
-            borderColor: props.currentTheme.highlight,
-            borderTop: "none",
-          }}
-        >
-          <DialogContentText
-            style={{
-              color: props.currentTheme.textColor,
-            }}
-          >
+        <DialogContent className={style.aboutMeMain}>
+          <DialogContentText className={style.textColor}>
             I am a 20 year old student currently studying computer science at
             the University of Florida. My interest in computer science began
             freshmen year of high school when I took my first course, Object
@@ -84,7 +50,7 @@ const AboutMe = (props) => {
           </DialogContentText>
         </DialogContent>
       </Dialog>
-    </div>
+    </Fragment>
   );
 };
 

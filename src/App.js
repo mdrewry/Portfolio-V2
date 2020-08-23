@@ -1,23 +1,276 @@
 import React, { useState } from "react";
 import { animateScroll as scroll } from "react-scroll";
+import { RemoveScrollBar } from "react-remove-scroll-bar";
 import { Typography, Grid, Button, Container } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
 import Particles from "react-particles-js";
-import { useStyles, theme } from "./Styles.js";
-import IconBar from "./Components/IconBar.js";
+import { themes } from "./Themes.js";
+import ActionBar from "./Components/ActionBar.js";
+import ProjectsList from "./ProjectsList";
 import Project from "./Components/Project.js";
 import ContactForm from "./Components/ContactForm.js";
 import AboutMe from "./Components/AboutMe.js";
-import ProjectsList from "./ProjectsList";
 import ThemeSelector from "./Components/ThemeSelector";
+
 function App() {
+  const [currentTheme, setCurrentTheme] = useState(themes[0]);
+  const useStyles = makeStyles((theme) => ({
+    //main page
+
+    main: {
+      textAlign: "center",
+      position: "relative",
+      backgroundColor: currentTheme.primary,
+      minHeight: "200vh",
+    },
+    particleBackground: {
+      position: "fixed",
+      width: "100%",
+      height: "100%",
+      zIndex: "1",
+    },
+    content: {
+      position: "relative",
+      zIndex: "10",
+    },
+    section: {
+      height: "100vh",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      justifyContent: "center",
+    },
+    SubmitButtonWrapper: {
+      display: "flex",
+      alignItems: "center",
+      backgroundColor: currentTheme.secondary,
+      padding: "10px",
+    },
+    welcomeText: {
+      fontSize: "25px",
+      paddingLeft: "10px",
+      paddingRight: "10px",
+      color: currentTheme.textColor,
+      fontFamily: "Monospace",
+    },
+    //PageHeader
+    pageHeader: {
+      display: "flex",
+      flexDirection: "row",
+      position: "fixed",
+      alignItems: "center",
+      padding: "10px",
+      zIndex: "300",
+      backgroundColor: currentTheme.secondary,
+      borderRadius: "0px 0px 5px 0px",
+      borderRight: "solid",
+      borderBottom: "solid",
+      borderRightColor: currentTheme.highlight,
+      borderBottomColor: currentTheme.highlight,
+    },
+    headerButton: {
+      borderColor: currentTheme.highlight,
+      color: currentTheme.textColor,
+      [theme.breakpoints.down("sm")]: {
+        fontSize: 8,
+      },
+      [theme.breakpoints.up("md")]: {
+        fontSize: 10,
+      },
+      [theme.breakpoints.up("lg")]: {
+        fontSize: 15,
+      },
+      [theme.breakpoints.up("xl")]: {
+        fontSize: 20,
+      },
+      "&:hover": {
+        color: currentTheme.highlight,
+      },
+    },
+    headerButtonMiddleLeft: {
+      borderColor: currentTheme.highlight,
+      color: currentTheme.textColor,
+      [theme.breakpoints.down("sm")]: {
+        fontSize: 8,
+      },
+      [theme.breakpoints.up("md")]: {
+        fontSize: 10,
+      },
+      [theme.breakpoints.up("lg")]: {
+        fontSize: 15,
+      },
+      [theme.breakpoints.up("xl")]: {
+        fontSize: 20,
+      },
+      "&:hover": {
+        color: currentTheme.highlight,
+      },
+      marginLeft: "10px",
+      marginRight: "5px",
+    },
+    headerButtonMiddleRight: {
+      borderColor: currentTheme.highlight,
+      color: currentTheme.textColor,
+      [theme.breakpoints.down("sm")]: {
+        fontSize: 8,
+      },
+      [theme.breakpoints.up("md")]: {
+        fontSize: 10,
+      },
+      [theme.breakpoints.up("lg")]: {
+        fontSize: 15,
+      },
+      [theme.breakpoints.up("xl")]: {
+        fontSize: 20,
+      },
+      "&:hover": {
+        color: currentTheme.highlight,
+      },
+      marginRight: "10px",
+      marginLeft: "5px",
+    },
+    //ThemeSelector
+    filler: {
+      flexGrow: "1",
+    },
+    themeSelectorMain: {
+      borderRadius: "10px",
+      backgroundColor: currentTheme.secondary,
+    },
+    themeSelectorList: {
+      marginTop: "20px",
+    },
+    themeName: {
+      marginRight: "10px",
+      color: currentTheme.textColor,
+    },
+    //AboutMe
+    dialogTitle: {
+      textAlign: "center",
+      fontSize: 30,
+      backgroundColor: currentTheme.primary,
+      color: currentTheme.textColor,
+      border: "solid",
+      borderColor: currentTheme.highlight,
+      borderBottom: "none",
+      fontFamily: "Monospace",
+    },
+    aboutMeMain: {
+      border: "solid",
+      backgroundColor: currentTheme.primary,
+      borderColor: currentTheme.highlight,
+      borderTop: "none",
+    },
+    //Contact Form
+    contactMeMain: {
+      backgroundColor: currentTheme.primary,
+      border: "solid",
+      borderColor: currentTheme.highlight,
+    },
+    formField: {
+      backgroundColor: currentTheme.secondary,
+      marginBottom: "10px",
+    },
+    submitText: {
+      color: currentTheme.textColor,
+      fontSize: 15,
+    },
+    submitButton: {
+      backgroundColor: currentTheme.highlight,
+      color: currentTheme.textColor,
+    },
+    // ActionBar Stuff
+    actionBar: {
+      display: "flex",
+      flexDirection: "row",
+      justifyContent: "space-evenly",
+      alignSelf: "center",
+      alignItems: "center",
+    },
+    actionIcon: {
+      fontSize: "40px",
+      color: currentTheme.highlight,
+      "&:hover": {
+        fontSize: "80px",
+      },
+    },
+
+    //Projects Stuff
+    projectMain: {
+      border: "solid",
+      backgroundColor: currentTheme.primary,
+      borderColor: currentTheme.highlight,
+      height: "100%",
+      display: "flex",
+      flexDirection: "column",
+    },
+    projectContent: {
+      backgroundColor: currentTheme.secondary,
+      display: "flex",
+      flexDirection: "column",
+      flexGrow: "1",
+    },
+    projectMedia: {
+      width: "80px",
+      paddingLeft: "80px",
+    },
+    projectTitle: {
+      fontSize: 20,
+      color: currentTheme.textColor,
+      fontFamily: "Monospace",
+    },
+    projectDivider: {
+      marginTop: "10px",
+      marginBottom: "10px",
+    },
+    projectText: {
+      fontSize: 14,
+      color: currentTheme.textColor,
+    },
+    TechStackTitle: {
+      marginBottom: "10px",
+      textAlign: "center",
+    },
+    TechStackMain: {
+      display: "flex",
+      flexDirection: "row",
+      justifyContent: "space-around",
+    },
+    TechStackImage: {
+      height: "40px",
+      marginLeft: "10px",
+    },
+    techIconAvatar: {
+      width: "40px",
+      height: "40px",
+      backgroundColor: "#FFFFFF",
+      textAlign: "center",
+    },
+    //Misc
+    flex: {
+      display: "flex",
+    },
+    noUnderlineText: {
+      textDecoration: "none",
+    },
+    textColor: {
+      color: currentTheme.textColor,
+    },
+    backgroundColorHighlight: {
+      backgroundColor: currentTheme.highlight,
+    },
+    backgroundColorSecondary: {
+      backgroundColor: currentTheme.secondary,
+    },
+  }));
   const style = useStyles();
-  const [currentTheme, setCurrentTheme] = useState(theme[0]);
-  const [themeIndex, setThemeIndex] = useState(1);
+
   return (
-    <div
-      className={style.main}
-      style={{ backgroundColor: currentTheme.primary }}
-    >
+    <div className={style.main}>
+      <meta
+        name="viewport"
+        content="minimum-scale=1, initial-scale=1, width=device-width"
+      />
       <Particles
         className={style.particleBackground}
         params={{
@@ -40,49 +293,32 @@ function App() {
         }}
       />
       <div className={style.content}>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            position: "fixed",
-            alignItems: "center",
-            padding: "10px",
-            zIndex: "300",
-          }}
-        >
+        <div className={style.pageHeader}>
           <ThemeSelector
-            currentTheme={currentTheme}
+            themes={themes}
             setCurrentTheme={setCurrentTheme}
-            themeIndex={themeIndex}
-            setThemeIndex={setThemeIndex}
+            style={style}
           />
-          <AboutMe currentTheme={currentTheme} />
-          <ContactForm currentTheme={currentTheme} />
-          <div style={{ flexGrow: 1 }} />
+
+          <AboutMe style={style} />
+          <ContactForm currentTheme={currentTheme} style={style} />
+          <Button
+            variant="outlined"
+            className={style.headerButton}
+            onClick={() => scroll.scrollToBottom()}
+          >
+            Projects
+          </Button>
+          <div className={style.filler} />
         </div>
-        <Typography
-          className={style.WelcomeText}
-          style={{
-            color: currentTheme.textColor,
-            fontFamily: "Monospace",
-          }}
-        >
-          Hello, my name is Mark Drewry. I am currently studying computer
-          science at UF.
-        </Typography>
-        <IconBar currentTheme={currentTheme} />
-        <Button
-          variant="contained"
-          style={{
-            backgroundColor: currentTheme.highlight,
-            color: currentTheme.textColor,
-          }}
-          className={style.ProjectButton}
-          onClick={() => scroll.scrollToBottom()}
-        >
-          Projects
-        </Button>
-        <Container className={style.ProjectsGridWrapper}>
+        <Container className={style.section}>
+          <Typography className={style.welcomeText}>
+            Hello, my name is Mark Drewry. I am currently studying computer
+            science at UF.
+          </Typography>
+          <ActionBar style={style} />
+        </Container>
+        <Container className={style.section}>
           <Grid className={style.ProjectsGrid} container spacing={8}>
             {ProjectsList.map((ProjectI) => (
               <Grid
@@ -94,6 +330,7 @@ function App() {
                 lg={4}
               >
                 <Project
+                  style={style}
                   currentTheme={currentTheme}
                   title={ProjectI.title}
                   repoLink={ProjectI.repoLink}

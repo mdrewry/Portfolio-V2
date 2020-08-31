@@ -1,17 +1,12 @@
 import React, { useState } from "react";
-import { animateScroll as scroll } from "react-scroll";
-import { RemoveScrollBar } from "react-remove-scroll-bar";
-import { Typography, Grid, Button, Container } from "@material-ui/core";
+import { Typography, Grid, Container } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import Particles from "react-particles-js";
 import { themes } from "./Themes.js";
 import ActionBar from "./Components/ActionBar.js";
 import ProjectsList from "./ProjectsList";
 import Project from "./Components/Project.js";
-import ContactForm from "./Components/ContactForm.js";
-import AboutMe from "./Components/AboutMe.js";
-import ThemeSelector from "./Components/ThemeSelector";
-
+import TopNav from "./Components/TopNav";
 function App() {
   const [currentTheme, setCurrentTheme] = useState(themes[0]);
   const useStyles = makeStyles((theme) => ({
@@ -61,12 +56,15 @@ function App() {
       alignItems: "center",
       padding: "10px",
       zIndex: "300",
-      backgroundColor: currentTheme.secondary,
+      backgroundColor: currentTheme.primary,
       borderRadius: "0px 0px 5px 0px",
       borderRight: "solid",
       borderBottom: "solid",
       borderRightColor: currentTheme.highlight,
       borderBottomColor: currentTheme.highlight,
+      "&:hover": {
+        boxShadow: `1px 1px 10px 3px ${currentTheme.highlight}`,
+      },
     },
     headerButton: {
       borderColor: currentTheme.highlight,
@@ -247,6 +245,12 @@ function App() {
       textAlign: "center",
     },
     //Misc
+    rowCenter: {
+      display: "flex",
+      flexDirection: "row",
+      alignItems: "center",
+      width: "100%",
+    },
     flex: {
       display: "flex",
     },
@@ -264,7 +268,6 @@ function App() {
     },
   }));
   const style = useStyles();
-
   return (
     <div className={style.main}>
       <meta
@@ -293,24 +296,12 @@ function App() {
         }}
       />
       <div className={style.content}>
-        <div className={style.pageHeader}>
-          <ThemeSelector
-            themes={themes}
-            setCurrentTheme={setCurrentTheme}
-            style={style}
-          />
-
-          <AboutMe style={style} />
-          <ContactForm currentTheme={currentTheme} style={style} />
-          <Button
-            variant="outlined"
-            className={style.headerButton}
-            onClick={() => scroll.scrollToBottom()}
-          >
-            Projects
-          </Button>
-          <div className={style.filler} />
-        </div>
+        <TopNav
+          style={style}
+          themes={themes}
+          currentTheme={currentTheme}
+          setCurrentTheme={setCurrentTheme}
+        />
         <Container className={style.section}>
           <Typography className={style.welcomeText}>
             Hello, my name is Mark Drewry. I am currently studying computer
@@ -338,6 +329,7 @@ function App() {
                   techStack={ProjectI.techStack}
                   optionalLink={ProjectI.optionalLink}
                   projectIcon={ProjectI.projectIcon}
+                  links={ProjectI.links}
                 />
               </Grid>
             ))}

@@ -1,4 +1,4 @@
-import React, { useState, useRef, Fragment } from "react";
+import React, { useState, useRef, Fragment, useEffect } from "react";
 import { FiberManualRecord } from "@material-ui/icons";
 import {
   Tooltip,
@@ -15,14 +15,14 @@ import {
 const ThemeSelector = ({ themes, setCurrentTheme, style }) => {
   const [openThemeSelector, setOpenThemeSelector] = useState(false);
   const anchorRef = useRef(null);
-  const prevOpen = React.useRef(openThemeSelector);
+  const prevOpen = useRef(openThemeSelector);
   const handleClose = (event) => {
     if (anchorRef.current && anchorRef.current.contains(event.target)) {
       return;
     }
     setOpenThemeSelector(false);
   };
-  React.useEffect(() => {
+  useEffect(() => {
     if (prevOpen.current === true && openThemeSelector === false) {
       anchorRef.current.focus();
     }
@@ -45,6 +45,9 @@ const ThemeSelector = ({ themes, setCurrentTheme, style }) => {
       <Popper
         open={openThemeSelector}
         anchorEl={anchorRef.current}
+        getContentAnchorEl={null}
+        anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+        transformOrigin={{ vertical: "top", horizontal: "center" }}
         role={undefined}
         transition
         disablePortal

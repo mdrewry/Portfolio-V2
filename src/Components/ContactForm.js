@@ -12,7 +12,6 @@ import {
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import { Send } from "@material-ui/icons";
 import emailjs from "emailjs-com";
-import info from "../config.js";
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
@@ -30,7 +29,12 @@ const ContactForm = ({ style, currentTheme }) => {
       name: name,
       message: message,
     };
-    emailjs.send("gmail", "template_7L4JoTk5", input, info.userKey);
+    emailjs.send(
+      "gmail",
+      "template_7L4JoTk5",
+      input,
+      process.env.REACT_ACT_EMAILJS_KEY
+    );
     setEmailSent(true);
     handleClose();
   }

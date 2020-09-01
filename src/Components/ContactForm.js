@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, Fragment } from "react";
 import {
   TextField,
   Button,
@@ -8,23 +8,19 @@ import {
   SnackbarContent,
   Snackbar,
   Typography,
-  Link,
 } from "@material-ui/core/";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import { Send } from "@material-ui/icons";
 import emailjs from "emailjs-com";
-import info from "../config.js";
-import { useStyles } from "../Styles.js";
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
-const ContactForm = (props) => {
-  const style = useStyles();
+const ContactForm = ({ style, currentTheme }) => {
+  const [openContactMe, setOpenContactMe] = useState(false);
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
-  const [openDialog, setOpenDialog] = useState(false);
   const [emailSent, setEmailSent] = useState(false);
   async function sendMessage(e) {
     e.preventDefault();
@@ -33,67 +29,55 @@ const ContactForm = (props) => {
       name: name,
       message: message,
     };
-    emailjs.send("gmail", "template_7L4JoTk5", input, info.userKey);
+    emailjs.send(
+      "gmail",
+      "template_7L4JoTk5",
+      input,
+      process.env.REACT_ACT_EMAILJS_KEY
+    );
     setEmailSent(true);
     handleClose();
   }
   const handleClose = () => {
-    setOpenDialog(false);
+    setOpenContactMe(false);
   };
   const handleCloseSend = () => {
     setEmailSent(false);
   };
   const theme = createMuiTheme({
     palette: {
-      primary: { 500: props.currentTheme.highlight },
+      primary: { 500: currentTheme.highlight },
     },
   });
   return (
-    <div>
-      <Link
-        style={{ textDecoration: "none" }}
-        onClick={(e) => e.preventDefault()}
+    <Fragment>
+      <Button
+        variant="outlined"
+        className={style.headerButtonMiddleRight}
+        onClick={(e) => {
+          e.preventDefault();
+          setOpenContactMe(true);
+        }}
       >
-        <Button
-          variant="outlined"
-          style={{
-            borderColor: props.currentTheme.highlight,
-            color: props.currentTheme.textColor,
-            fontSize: 15,
-            "&:hover": {
-              color: props.currentTheme.highlight,
-            },
-          }}
-          onClick={() => {
-            setOpenDialog(true);
-          }}
-        >
-          Contact Me
-        </Button>
-      </Link>
+        Contact Me
+      </Button>
       <Snackbar
         open={emailSent}
         autoHideDuration={1500}
         onClose={handleCloseSend}
       >
         <SnackbarContent
-          style={{ backgroundColor: props.currentTheme.highlight }}
+          className={style.backgroundColorHighlight}
           message={"Message Sent!"}
           action={<Send />}
         />
       </Snackbar>
       <Dialog
-        open={openDialog}
+        open={openContactMe}
         onClose={handleClose}
         TransitionComponent={Transition}
       >
-        <DialogContent
-          style={{
-            backgroundColor: props.currentTheme.primary,
-            border: "solid",
-            borderColor: props.currentTheme.highlight,
-          }}
-        >
+        <DialogContent className={style.contactMeMain}>
           <form
             style={{ marginBottom: "10px" }}
             onSubmit={(e) => sendMessage(e)}
@@ -102,18 +86,15 @@ const ContactForm = (props) => {
               <TextField
                 label="Name"
                 autoComplete="disabled"
-                style={{
-                  backgroundColor: props.currentTheme.secondary,
-                  marginBottom: "10px",
-                }}
+                className={style.formField}
                 inputProps={{
                   style: {
-                    color: props.currentTheme.textColor,
+                    color: currentTheme.textColor,
                   },
                 }}
                 InputLabelProps={{
                   style: {
-                    color: props.currentTheme.textColor,
+                    color: currentTheme.textColor,
                   },
                 }}
                 value={name}
@@ -126,16 +107,13 @@ const ContactForm = (props) => {
               <TextField
                 label="Email"
                 autoComplete="disabled"
-                style={{
-                  backgroundColor: props.currentTheme.secondary,
-                  marginBottom: "10px",
-                }}
+                className={style.formField}
                 inputProps={{
-                  style: { color: props.currentTheme.textColor },
+                  style: { color: currentTheme.textColor },
                 }}
                 InputLabelProps={{
                   style: {
-                    color: props.currentTheme.textColor,
+                    color: currentTheme.textColor,
                   },
                 }}
                 value={email}
@@ -147,18 +125,15 @@ const ContactForm = (props) => {
 
               <TextField
                 label="Message"
-                style={{
-                  backgroundColor: props.currentTheme.secondary,
-                  marginBottom: "10px",
-                }}
+                className={style.formField}
                 inputProps={{
                   style: {
-                    color: props.currentTheme.textColor,
+                    color: currentTheme.textColor,
                   },
                 }}
                 InputLabelProps={{
                   style: {
-                    color: props.currentTheme.textColor,
+                    color: currentTheme.textColor,
                   },
                 }}
                 value={message}
@@ -170,29 +145,15 @@ const ContactForm = (props) => {
                 variant="filled"
               />
             </ThemeProvider>
-            <div
-              className={style.SubmitButtonWrapper}
-              style={{
-                backgroundColor: props.currentTheme.secondary,
-                padding: "10px",
-              }}
-            >
-              <Typography
-                style={{
-                  color: props.currentTheme.textColor,
-                  fontSize: 15,
-                }}
-              >
+            <div className={style.SubmitButtonWrapper}>
+              <Typography className={style.submitText}>
                 Email mdrewry0@gmail.com
               </Typography>
-              <div style={{ flexGrow: 1 }} />
+              <div className={style.filler} />
               <Button
                 type="submit"
                 variant="contained"
-                style={{
-                  backgroundColor: props.currentTheme.highlight,
-                  color: props.currentTheme.textColor,
-                }}
+                className={style.submitButton}
               >
                 <Send />
               </Button>
@@ -200,7 +161,7 @@ const ContactForm = (props) => {
           </form>
         </DialogContent>
       </Dialog>
-    </div>
+    </Fragment>
   );
 };
 

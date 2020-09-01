@@ -1,92 +1,83 @@
-import React, { useState } from "react";
-import { Typography, Avatar, Paper, Tooltip } from "@material-ui/core/";
-import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+import React, { useState, useRef, useEffect } from "react";
+import {
+  Typography,
+  Tooltip,
+  Card,
+  CardContent,
+  CardMedia,
+  Divider,
+  IconButton,
+  Paper,
+  MenuItem,
+  Menu,
+} from "@material-ui/core/";
+import {
+  MoreVert,
+  GitHub,
+  Shop,
+  Code,
+  Link,
+  LinkedIn,
+} from "@material-ui/icons";
+
 import TechStack from "./TechStack.js";
-import { useStyles } from "../Styles.js";
-function Project(props) {
-  const [elevation, setElevation] = useState(1);
-  const style = useStyles();
-  const title = props.title;
-  const repoLink = props.repoLink;
-  const description = props.description;
-  const techStack = props.techStack;
-  const projectIcon = props.projectIcon;
-  const setHighlight = (colorSelector) => {
-    if (colorSelector === true) {
-      setElevation(10);
-    } else {
-      setElevation(1);
-    }
+const LinkButton = ({ label, style }) => {
+  if (label === "Github") return <GitHub className={style.projectLinkIcon} />;
+  else if (label === "DevPost")
+    return <Code className={style.projectLinkIcon} />;
+  else if (label === "Play Store")
+    return <Shop className={style.projectLinkIcon} />;
+  else if (label === "Project Owner")
+    return <LinkedIn className={style.projectLinkIcon} />;
+  else return <Link className={style.projectLinkIcon} />;
+};
+
+function Project({ style, title, description, techStack, links, projectIcon }) {
+  const [anchorEl, setAnchorEl] = useState(null);
+  const handleClose = (e) => {
+    setAnchorEl(null);
   };
-  const theme = createMuiTheme();
-  theme.shadows[10] = `0px 0px 15px 1px ${props.currentTheme.highlight}`;
+  const handleClick = (e) => {
+    setAnchorEl(e.target);
+  };
   return (
-    <MuiThemeProvider theme={theme}>
-      <a href={repoLink} style={{ textDecoration: "none" }}>
-        <Tooltip title="Visit Github">
-          <Paper
-            elevation={elevation}
-            className={style.ProjectMain}
-            style={{
-              backgroundColor: props.currentTheme.primary,
-              borderColor: props.currentTheme.highlight,
-            }}
-            spacing={2}
-            onMouseEnter={() => setHighlight(true)}
-            onMouseLeave={() => setHighlight(false)}
+    <Card className={style.projectMain} spacing={2}>
+      <CardMedia className={style.projectMedia} image={projectIcon} />
+      <CardContent className={style.projectContent}>
+        <div className={style.rowCenter}>
+          <IconButton onClick={handleClick} ref={anchorEl}>
+            <MoreVert className={style.projectLinkIcon} />
+          </IconButton>
+          <Menu
+            className={style.themeSelectorList}
+            anchorEl={anchorEl}
+            open={Boolean(anchorEl)}
+            onClose={handleClose}
           >
-            <Paper
-              className={style.CardHeader}
-              style={{
-                backgroundColor: props.currentTheme.secondary,
-              }}
-            >
-              <Typography
-                className={style.ProjectTitle}
-                style={{
-                  color: props.currentTheme.textColor,
-                  fontFamily: "Monospace",
-                }}
+            {links.map((l, i) => (
+              <a
+                target="none"
+                href={l.link}
+                className={style.noUnderlineText}
+                key={i}
               >
-                {title}
-              </Typography>
-              <Avatar
-                style={{
-                  width: "80px",
-                  height: "80px",
-                }}
-                variant="rounded"
-              >
-                <img
-                  className={style.ProjectImage}
-                  alt=""
-                  src={projectIcon}
-                ></img>
-              </Avatar>
-            </Paper>
-            <Paper
-              className={style.ProjectInformation}
-              style={{
-                backgroundColor: props.currentTheme.secondary,
-                marginTop: "10px",
-                padding: "15px",
-              }}
-            >
-              <Typography
-                className={style.ProjectText}
-                style={{ color: props.currentTheme.textColor }}
-              >
-                {description}
-              </Typography>
-              <TechStack
-                techStackIcons={techStack}
-                currentTheme={props.currentTheme}
-              />
-            </Paper>
-          </Paper>
-        </Tooltip>
-      </a>
-    </MuiThemeProvider>
+                <MenuItem className={style.rowCenter} onClick={handleClose}>
+                  <LinkButton label={l.label} style={style} />
+                  <Typography className={style.projectLinkText}>
+                    {l.label}
+                  </Typography>
+                </MenuItem>
+              </a>
+            ))}
+          </Menu>
+          <Typography className={style.projectTitle}>{title}</Typography>
+        </div>
+        <Divider className={style.projectDivider} />
+        <Typography className={style.projectText}>{description}</Typography>
+        <div className={style.filler} />
+        <TechStack techStackIcons={techStack} style={style} />
+      </CardContent>
+    </Card>
   );
 }
 

@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { animateScroll as scroll } from "react-scroll";
-import { Button, Card } from "@material-ui/core";
+import { Button } from "@material-ui/core";
 import ContactForm from "./ContactForm.js";
 import AboutMe from "./AboutMe.js";
 import ThemeSelector from "./ThemeSelector";

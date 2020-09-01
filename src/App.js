@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { Typography, Grid, Container } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
+import {
+  makeStyles,
+  MuiThemeProvider,
+  createMuiTheme,
+} from "@material-ui/core/styles";
 import Particles from "react-particles-js";
 import { themes } from "./Themes.js";
 import ActionBar from "./Components/ActionBar.js";
@@ -17,6 +21,7 @@ function App() {
       position: "relative",
       backgroundColor: currentTheme.primary,
       minHeight: "200vh",
+      overflow: "hidden",
     },
     particleBackground: {
       position: "fixed",
@@ -27,9 +32,11 @@ function App() {
     content: {
       position: "relative",
       zIndex: "10",
+      minHeight: "100vh",
+      paddingBottom: "20px",
     },
     section: {
-      height: "100vh",
+      minHeight: "100vh",
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
@@ -188,9 +195,6 @@ function App() {
     actionIcon: {
       fontSize: "40px",
       color: currentTheme.highlight,
-      "&:hover": {
-        fontSize: "80px",
-      },
     },
 
     //Projects Stuff
@@ -201,6 +205,9 @@ function App() {
       height: "100%",
       display: "flex",
       flexDirection: "column",
+      "&:hover": {
+        boxShadow: `1px 1px 10px 3px ${currentTheme.highlight}`,
+      },
     },
     projectContent: {
       backgroundColor: currentTheme.secondary,
@@ -216,6 +223,15 @@ function App() {
       fontSize: 20,
       color: currentTheme.textColor,
       fontFamily: "Monospace",
+    },
+    projectLinkText: {
+      fontSize: 14,
+      color: currentTheme.textColor,
+      marginLeft: "10px",
+    },
+    projectLinkIcon: {
+      fontSize: "30px",
+      color: currentTheme.highlight,
     },
     projectDivider: {
       marginTop: "10px",
@@ -268,6 +284,38 @@ function App() {
     },
   }));
   const style = useStyles();
+  const theme = createMuiTheme({
+    palette: {
+      primary: {
+        main: "#55B56A",
+        light: "#EDF8F4",
+        dark: "#028360",
+      },
+      info: {
+        main: "#F4B425",
+      },
+    },
+    overrides: {
+      MuiMenu: {
+        paper: {
+          backgroundColor: currentTheme.secondary,
+        },
+      },
+      MuiMenuItem: {
+        root: {
+          backgroundColor: currentTheme.secondary,
+          "&:hover": {
+            border: "solid",
+            borderColor: currentTheme.highlight,
+            backgroundColor: currentTheme.primary,
+            borderRadius: "5px",
+            borderWidth: "1px",
+          },
+        },
+      },
+    },
+    props: {},
+  });
   return (
     <div className={style.main}>
       <meta
@@ -279,63 +327,55 @@ function App() {
         params={{
           particles: {
             number: {
-              value: 30,
+              value: 10,
             },
             size: {
               value: 4,
             },
           },
-          interactivity: {
-            events: {
-              onhover: {
-                enable: true,
-                mode: "repulse",
-              },
-            },
-          },
         }}
       />
-      <div className={style.content}>
-        <TopNav
-          style={style}
-          themes={themes}
-          currentTheme={currentTheme}
-          setCurrentTheme={setCurrentTheme}
-        />
-        <Container className={style.section}>
-          <Typography className={style.welcomeText}>
-            Hello, my name is Mark Drewry. I am currently studying computer
-            science at UF.
-          </Typography>
-          <ActionBar style={style} />
-        </Container>
-        <Container className={style.section}>
-          <Grid className={style.ProjectsGrid} container spacing={8}>
-            {ProjectsList.map((ProjectI) => (
-              <Grid
-                key={ProjectI.key}
-                className={style.IndividualProject}
-                item
-                xs={12}
-                md={6}
-                lg={4}
-              >
-                <Project
-                  style={style}
-                  currentTheme={currentTheme}
-                  title={ProjectI.title}
-                  repoLink={ProjectI.repoLink}
-                  description={ProjectI.description}
-                  techStack={ProjectI.techStack}
-                  optionalLink={ProjectI.optionalLink}
-                  projectIcon={ProjectI.projectIcon}
-                  links={ProjectI.links}
-                />
-              </Grid>
-            ))}
-          </Grid>
-        </Container>
-      </div>
+      <MuiThemeProvider theme={theme}>
+        <div className={style.content}>
+          <TopNav
+            style={style}
+            themes={themes}
+            currentTheme={currentTheme}
+            setCurrentTheme={setCurrentTheme}
+          />
+          <Container className={style.section}>
+            <Typography className={style.welcomeText}>
+              Hello, my name is Mark Drewry. I am currently studying computer
+              science at UF.
+            </Typography>
+            <ActionBar style={style} />
+          </Container>
+          <Container className={style.section}>
+            <Grid className={style.ProjectsGrid} container spacing={8}>
+              {ProjectsList.map((ProjectI) => (
+                <Grid
+                  key={ProjectI.key}
+                  className={style.IndividualProject}
+                  item
+                  xs={12}
+                  md={ProjectI.key === "0" ? 12 : 6}
+                  lg={ProjectI.key === "0" ? 12 : 4}
+                >
+                  <Project
+                    style={style}
+                    title={ProjectI.title}
+                    description={ProjectI.description}
+                    techStack={ProjectI.techStack}
+                    optionalLink={ProjectI.optionalLink}
+                    projectIcon={ProjectI.projectIcon}
+                    links={ProjectI.links}
+                  />
+                </Grid>
+              ))}
+            </Grid>
+          </Container>
+        </div>
+      </MuiThemeProvider>
     </div>
   );
 }

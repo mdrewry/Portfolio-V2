@@ -1,13 +1,11 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState } from "react";
 import {
   Typography,
-  Tooltip,
   Card,
   CardContent,
   CardMedia,
   Divider,
   IconButton,
-  Paper,
   MenuItem,
   Menu,
 } from "@material-ui/core/";

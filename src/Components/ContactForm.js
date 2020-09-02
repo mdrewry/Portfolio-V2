@@ -29,7 +29,7 @@ const ContactForm = ({ style, currentTheme }) => {
       name: name,
       message: message,
     };
-    emailjs.send(
+    await emailjs.send(
       "gmail",
       "template_7L4JoTk5",
       input,

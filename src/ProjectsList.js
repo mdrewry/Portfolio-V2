@@ -19,7 +19,7 @@ export default [
     key: "0",
     title: "GameSetMatch",
     description:
-      "I have spent the summer of 2020 developing a full stack webapp that is powered with React on the frontend and Google Firebase on the backend. I am the engineer responsible for the codebase and work with a great project manager and user experience designer. This internship is the largest project I have worked on to date and has given me an amazing opportunity to become more familiar with JavaScript, React, Firebase, and managing large codebases. The project is currently private on Github. For more information contact the project owner, Joel Relova (joelrelova@gmail.com).",
+      "I have spent the summer of 2020 developing a full stack webapp that is powered with React on the frontend and Google Firebase on the backend. I am the engineer responsible for the codebase and work with a great project manager and user experience designer. This internship is the largest project I have worked on to date and has given me an amazing opportunity to become more familiar with JavaScript, React, Firebase, and managing large codebases. The project is currently private on Github. For more information contact the product owner, Joel Relova (joelrelova@gmail.com).",
     links: [
       {
         label: "Project Owner",

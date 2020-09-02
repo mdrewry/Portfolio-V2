@@ -33,7 +33,7 @@ const ContactForm = ({ style, currentTheme }) => {
       "gmail",
       "template_7L4JoTk5",
       input,
-      process.env.REACT_ACT_EMAILJS_KEY
+      process.env.REACT_APP_EMAILJS_KEY
     );
     setEmailSent(true);
     handleClose();

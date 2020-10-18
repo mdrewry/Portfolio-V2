@@ -60,7 +60,8 @@ export default [
       { label: "Github", link: "https://github.com/6XAM/MVP" },
       {
         label: "CEN3031 Website Showcase",
-        link: "https://cen3031-spring2020.github.io/project-showcase/Home",
+        link:
+          "https://slack-redir.net/link?url=https%3A%2F%2Fcen3031-spring2020.github.io%2Fproject-showcase%2F",
       },
     ],
     techStack: [

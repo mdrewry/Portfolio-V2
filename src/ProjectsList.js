@@ -56,14 +56,7 @@ export default [
     description:
       "As part of my Software Engineering class, CEN3031 at UF, the University partnered with local businesses to offer internships in order to gain experience working on a full stack webapp. This webapp allows you to sign up to receive a new horoscope via calendar or email every moon phase. This project gave me lots of experience using Github in group settings, and allowed me to work on the MERN stack.",
     projectIcon: HeavenlyAstrologyIcon,
-    links: [
-      { label: "Github", link: "https://github.com/6XAM/MVP" },
-      {
-        label: "CEN3031 Website Showcase",
-        link:
-          "https://slack-redir.net/link?url=https%3A%2F%2Fcen3031-spring2020.github.io%2Fproject-showcase%2F",
-      },
-    ],
+    links: [{ label: "Github", link: "https://github.com/6XAM/MVP" }],
     techStack: [
       {
         key: "1",

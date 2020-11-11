@@ -54,7 +54,7 @@ export default [
     key: "1",
     title: "Heavenly Writing",
     description:
-      "As part of my Software Engineering class, CEN3031 at UF, the University partnered with local businesses to offer internships in order to gain experience working on a full stack webapp. This webapp allows you to sign up to receive a new horoscope via calendar or email every moon phase. This project gave me lots of experience using Github in group settings, and allowed me to work on the MERN stack.",
+      "As part of my Software Engineering class, CEN3031 at UF, the University partnered with local businesses in order to provide experience working on a full stack webapp. This app was created using the MERN stack, and I developed the React frontend with a team of 2 others. ",
     projectIcon: HeavenlyAstrologyIcon,
     links: [{ label: "Github", link: "https://github.com/6XAM/MVP" }],
     techStack: [
@@ -84,7 +84,7 @@ export default [
     key: "2",
     title: "Portfolio V1",
     description:
-      "My first portfolio website. This project was my first solo project and it allowed me to become more comfortable using Javascript and React to make frontend websites.",
+      "My first portfolio website. This allowed me to become more comfortable with JavaScript and React.",
     links: [{ label: "Github", link: "https://github.com/mdrewry/Portfolio" }],
     projectIcon: PortfolioV1Icon,
     techStack: [
@@ -117,7 +117,7 @@ export default [
     key: "4",
     title: "Crowd Flow",
     description:
-      "Crowd Flow was a project made at Swamphacks VI, in 2019. It is a webapp developed using React, and Google Cloud services. The app was intended to be a tool used for event planning that would give organizers information on movement patterns, which would allow them to create a better experience. Although we were not able to finish the full webapp, it was my first web project and was an amazing experience.",
+      "Crowd Flow was a project made at Swamphacks VI, in 2019. It is a webapp developed using React, and Google Cloud services. The app was intended to be a tool used for event planning that would give organizers information on movement patterns, which would allow them to create a better experience. This was my first experience working with a team on a GitHub repository.",
     links: [
       { label: "Github", link: "https://github.com/manthi4/SwampHack2020" },
       { label: "DevPost", link: "devpost.com/software/crowdflow-u0jghn" },
@@ -140,7 +140,7 @@ export default [
     key: "5",
     title: "Simple Interval",
     description:
-      "An interval timer inspired by my friend's workout routine. I had always been curious about making an app and when the Play store did not have any timers I liked, I took it as an opportunity to learn. I created some beginner projects following tutorials online, and have become somewhat familiar with Android Studio. I applied this knowledge and created this simple interval timer available on the Google Play Store.",
+      "An interval timer inspired by my friend's workout routine. It was created using Android Studio with Java. This app is available on the Google Play Store.",
     links: [
       { label: "Github", link: "https://github.com/mdrewry/IntervalTimer" },
       {
@@ -167,7 +167,7 @@ export default [
     key: "6",
     title: "Snap Chef",
     description:
-      "This app was a small summer project created with my friends. We wanted to get some experience using React Native and utilize the Google Vision API in an interesting way. The app allows a user to select or capture an image of available ingredients and return a filtered list of recipes. The google vision api is not as accurate as I would have hoped for but the app is complete and will only improve.",
+      "This app was a small summer project created with my friends. We wanted to get some experience using React Native and the Google Vision API. The app allows a user to select or capture an image of available ingredients and displays a filtered list of recipes.",
     links: [{ label: "Github", link: "https://github.com/mdrewry/SnapChef" }],
     projectIcon: snapChefIcon,
     techStack: [

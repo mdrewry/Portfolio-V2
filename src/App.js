@@ -12,7 +12,7 @@ import ProjectsList from "./ProjectsList";
 import Project from "./Components/Project.js";
 import TopNav from "./Components/TopNav";
 function App() {
-  const [currentTheme, setCurrentTheme] = useState(themes[0]);
+  const [currentTheme, setCurrentTheme] = useState(themes[9]);
   const useStyles = makeStyles((theme) => ({
     //main page
 

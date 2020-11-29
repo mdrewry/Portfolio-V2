@@ -1,7 +1,7 @@
 import React, { useState, useRef, Fragment, useEffect } from "react";
-import { FiberManualRecord } from "@material-ui/icons";
+import { FiberManualRecord, Palette } from "@material-ui/icons";
 import {
-  Button,
+  IconButton,
   MenuList,
   MenuItem,
   Popper,
@@ -9,6 +9,7 @@ import {
   ClickAwayListener,
   Paper,
   Typography,
+  Tooltip,
 } from "@material-ui/core";
 
 const ThemeSelector = ({ themes, setCurrentTheme, style }) => {
@@ -31,16 +32,20 @@ const ThemeSelector = ({ themes, setCurrentTheme, style }) => {
 
   return (
     <Fragment>
-      <Button
-        ref={anchorRef}
-        className={style.headerButton}
-        variant="outlined"
-        onClick={() => {
-          setOpenThemeSelector((prevOpen) => !prevOpen);
-        }}
-      >
-        Themes
-      </Button>
+      <div className={style.nav_spacer}>
+        <Tooltip title="Select Theme">
+          <IconButton
+            ref={anchorRef}
+            className={style.headerButton}
+            variant="outlined"
+            onClick={() => {
+              setOpenThemeSelector((prevOpen) => !prevOpen);
+            }}
+          >
+            <Palette className={style.nav_icon} />
+          </IconButton>
+        </Tooltip>
+      </div>
       <Popper
         open={openThemeSelector}
         anchorEl={anchorRef.current}

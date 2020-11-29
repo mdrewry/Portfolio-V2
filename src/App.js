@@ -1,327 +1,22 @@
 import React, { useState } from "react";
 import { Typography, Grid, Container } from "@material-ui/core";
-import {
-  makeStyles,
-  MuiThemeProvider,
-  createMuiTheme,
-} from "@material-ui/core/styles";
+import { MuiThemeProvider } from "@material-ui/core/styles";
 import Particles from "react-particles-js";
-import { themes } from "./Themes.js";
-import ActionBar from "./Components/ActionBar.js";
-import ProjectsList from "./ProjectsList";
-import Project from "./Components/Project.js";
+import { themes } from "./Themes";
+import { appstyle } from "./Style";
+import { Element } from "react-scroll";
+import ActionBar from "./Components/ActionBar";
+import { projects, experience } from "./Lists";
+import Project from "./Components/Project";
+import Job from "./Components/Job";
+import ContactForm from "./Components/ContactForm";
 import TopNav from "./Components/TopNav";
 function App() {
   const [currentTheme, setCurrentTheme] = useState(themes[9]);
-  const useStyles = makeStyles((theme) => ({
-    //main page
-
-    main: {
-      textAlign: "center",
-      position: "relative",
-      backgroundColor: currentTheme.primary,
-      minHeight: "200vh",
-      overflow: "hidden",
-    },
-    particleBackground: {
-      position: "fixed",
-      width: "100%",
-      height: "100%",
-      zIndex: "1",
-    },
-    content: {
-      position: "relative",
-      zIndex: "10",
-      minHeight: "100vh",
-      paddingBottom: "20px",
-    },
-    section: {
-      minHeight: "100vh",
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-      justifyContent: "center",
-    },
-    SubmitButtonWrapper: {
-      display: "flex",
-      alignItems: "center",
-      backgroundColor: currentTheme.secondary,
-      padding: "10px",
-    },
-    welcomeText: {
-      fontSize: "25px",
-      paddingLeft: "10px",
-      paddingRight: "10px",
-      color: currentTheme.textColor,
-      fontFamily: "Monospace",
-    },
-    //PageHeader
-    pageHeader: {
-      display: "flex",
-      flexDirection: "row",
-      position: "fixed",
-      alignItems: "center",
-      padding: "10px",
-      zIndex: "300",
-      backgroundColor: currentTheme.primary,
-      borderRadius: "0px 0px 5px 0px",
-      borderRight: "solid",
-      borderBottom: "solid",
-      borderRightColor: currentTheme.highlight,
-      borderBottomColor: currentTheme.highlight,
-      "&:hover": {
-        boxShadow: `1px 1px 10px 3px ${currentTheme.highlight}`,
-      },
-    },
-    headerButton: {
-      borderColor: currentTheme.highlight,
-      color: currentTheme.textColor,
-      [theme.breakpoints.down("sm")]: {
-        fontSize: 8,
-      },
-      [theme.breakpoints.up("md")]: {
-        fontSize: 10,
-      },
-      [theme.breakpoints.up("lg")]: {
-        fontSize: 15,
-      },
-      [theme.breakpoints.up("xl")]: {
-        fontSize: 20,
-      },
-      "&:hover": {
-        color: currentTheme.highlight,
-      },
-    },
-    headerButtonMiddleLeft: {
-      borderColor: currentTheme.highlight,
-      color: currentTheme.textColor,
-      [theme.breakpoints.down("sm")]: {
-        fontSize: 8,
-      },
-      [theme.breakpoints.up("md")]: {
-        fontSize: 10,
-      },
-      [theme.breakpoints.up("lg")]: {
-        fontSize: 15,
-      },
-      [theme.breakpoints.up("xl")]: {
-        fontSize: 20,
-      },
-      "&:hover": {
-        color: currentTheme.highlight,
-      },
-      marginLeft: "10px",
-      marginRight: "5px",
-    },
-    headerButtonMiddleRight: {
-      borderColor: currentTheme.highlight,
-      color: currentTheme.textColor,
-      [theme.breakpoints.down("sm")]: {
-        fontSize: 8,
-      },
-      [theme.breakpoints.up("md")]: {
-        fontSize: 10,
-      },
-      [theme.breakpoints.up("lg")]: {
-        fontSize: 15,
-      },
-      [theme.breakpoints.up("xl")]: {
-        fontSize: 20,
-      },
-      "&:hover": {
-        color: currentTheme.highlight,
-      },
-      marginRight: "10px",
-      marginLeft: "5px",
-    },
-    //ThemeSelector
-    filler: {
-      flexGrow: "1",
-    },
-    themeSelectorMain: {
-      borderRadius: "10px",
-      backgroundColor: currentTheme.secondary,
-    },
-    themeSelectorList: {
-      marginTop: "20px",
-    },
-    themeName: {
-      marginRight: "10px",
-      color: currentTheme.textColor,
-    },
-    //AboutMe
-    dialogTitle: {
-      textAlign: "center",
-      fontSize: 30,
-      backgroundColor: currentTheme.primary,
-      color: currentTheme.textColor,
-      border: "solid",
-      borderColor: currentTheme.highlight,
-      borderBottom: "none",
-      fontFamily: "Monospace",
-    },
-    aboutMeMain: {
-      border: "solid",
-      backgroundColor: currentTheme.primary,
-      borderColor: currentTheme.highlight,
-      borderTop: "none",
-    },
-    //Contact Form
-    contactMeMain: {
-      backgroundColor: currentTheme.primary,
-      border: "solid",
-      borderColor: currentTheme.highlight,
-    },
-    formField: {
-      backgroundColor: currentTheme.secondary,
-      marginBottom: "10px",
-    },
-    submitText: {
-      color: currentTheme.textColor,
-      fontSize: 15,
-    },
-    submitButton: {
-      backgroundColor: currentTheme.highlight,
-      color: currentTheme.textColor,
-    },
-    // ActionBar Stuff
-    actionBar: {
-      display: "flex",
-      flexDirection: "row",
-      justifyContent: "space-evenly",
-      alignSelf: "center",
-      alignItems: "center",
-    },
-    actionIcon: {
-      fontSize: "40px",
-      color: currentTheme.highlight,
-    },
-
-    //Projects Stuff
-    projectMain: {
-      border: "solid",
-      backgroundColor: currentTheme.primary,
-      borderColor: currentTheme.highlight,
-      height: "100%",
-      display: "flex",
-      flexDirection: "column",
-      "&:hover": {
-        boxShadow: `1px 1px 10px 3px ${currentTheme.highlight}`,
-      },
-    },
-    projectContent: {
-      backgroundColor: currentTheme.secondary,
-      display: "flex",
-      flexDirection: "column",
-      flexGrow: "1",
-    },
-    projectMedia: {
-      width: "80px",
-      paddingLeft: "80px",
-    },
-    projectTitle: {
-      fontSize: 20,
-      color: currentTheme.textColor,
-      fontFamily: "Monospace",
-    },
-    projectLinkText: {
-      fontSize: 14,
-      color: currentTheme.textColor,
-      marginLeft: "10px",
-    },
-    projectLinkIcon: {
-      fontSize: "30px",
-      color: currentTheme.highlight,
-    },
-    projectDivider: {
-      marginTop: "10px",
-      marginBottom: "10px",
-    },
-    projectText: {
-      fontSize: 14,
-      color: currentTheme.textColor,
-    },
-    TechStackTitle: {
-      marginBottom: "10px",
-      textAlign: "center",
-    },
-    TechStackMain: {
-      display: "flex",
-      flexDirection: "row",
-      justifyContent: "space-around",
-    },
-    TechStackImage: {
-      height: "40px",
-      marginLeft: "10px",
-    },
-    techIconAvatar: {
-      width: "40px",
-      height: "40px",
-      backgroundColor: "#FFFFFF",
-      textAlign: "center",
-    },
-    //Misc
-    rowCenter: {
-      display: "flex",
-      flexDirection: "row",
-      alignItems: "center",
-      width: "100%",
-    },
-    flex: {
-      display: "flex",
-    },
-    noUnderlineText: {
-      textDecoration: "none",
-    },
-    textColor: {
-      color: currentTheme.textColor,
-    },
-    backgroundColorHighlight: {
-      backgroundColor: currentTheme.highlight,
-    },
-    backgroundColorSecondary: {
-      backgroundColor: currentTheme.secondary,
-    },
-  }));
+  const { useStyles, theme } = appstyle(currentTheme);
   const style = useStyles();
-  const theme = createMuiTheme({
-    palette: {
-      primary: {
-        main: "#55B56A",
-        light: "#EDF8F4",
-        dark: "#028360",
-      },
-      info: {
-        main: "#F4B425",
-      },
-    },
-    overrides: {
-      MuiMenu: {
-        paper: {
-          backgroundColor: currentTheme.secondary,
-        },
-      },
-      MuiMenuItem: {
-        root: {
-          backgroundColor: currentTheme.secondary,
-          "&:hover": {
-            border: "solid",
-            borderColor: currentTheme.highlight,
-            backgroundColor: currentTheme.primary,
-            borderRadius: "5px",
-            borderWidth: "1px",
-          },
-        },
-      },
-    },
-    props: {},
-  });
   return (
     <div className={style.main}>
-      <meta
-        name="viewport"
-        content="minimum-scale=1, initial-scale=1, width=device-width"
-      />
       <Particles
         className={style.particleBackground}
         params={{
@@ -343,36 +38,65 @@ function App() {
             currentTheme={currentTheme}
             setCurrentTheme={setCurrentTheme}
           />
-          <Container className={style.section}>
+          <Element name="about" />
+          <Container id="about" className={style.section}>
             <Typography className={style.welcomeText}>
               Hello, my name is Mark Drewry. I am currently studying computer
               science at UF.
             </Typography>
             <ActionBar style={style} />
           </Container>
+          <Element name="experience" />
           <Container className={style.section}>
             <Grid className={style.ProjectsGrid} container spacing={8}>
-              {ProjectsList.map((ProjectI) => (
+              {experience.map((item, index) => (
                 <Grid
-                  key={ProjectI.key}
+                  key={index}
                   className={style.IndividualProject}
                   item
                   xs={12}
-                  md={ProjectI.key === "0" ? 12 : 6}
-                  lg={ProjectI.key === "0" ? 12 : 4}
                 >
-                  <Project
+                  <Job
                     style={style}
-                    title={ProjectI.title}
-                    description={ProjectI.description}
-                    techStack={ProjectI.techStack}
-                    optionalLink={ProjectI.optionalLink}
-                    projectIcon={ProjectI.projectIcon}
-                    links={ProjectI.links}
+                    title={item.title}
+                    description={item.description}
+                    optionalLink={item.optionalLink}
+                    projectIcon={item.projectIcon}
+                    links={item.links}
                   />
                 </Grid>
               ))}
             </Grid>
+          </Container>
+          <Element name="projects" />
+          <Container id="projects" className={style.section}>
+            <Grid className={style.ProjectsGrid} container spacing={8}>
+              {projects.map((item, index) => (
+                <Grid
+                  key={index}
+                  className={style.IndividualProject}
+                  item
+                  xs={12}
+                  sm={6}
+                  md={4}
+                  lg={3}
+                >
+                  <Project
+                    style={style}
+                    title={item.title}
+                    description={item.description}
+                    techStack={item.techStack}
+                    optionalLink={item.optionalLink}
+                    projectIcon={item.projectIcon}
+                    links={item.links}
+                  />
+                </Grid>
+              ))}
+            </Grid>
+          </Container>
+          <Element name="contact" />
+          <Container id="contact" className={style.section}>
+            <ContactForm currentTheme={currentTheme} style={style} />
           </Container>
         </div>
       </MuiThemeProvider>

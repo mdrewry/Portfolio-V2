@@ -5,7 +5,7 @@ export const themes = [
     secondary: "#455a64",
     highlight: "#D81159",
     textColor: "#FFFFFF",
-    name: "Default",
+    name: "Raspberry",
   },
   {
     key: 1,

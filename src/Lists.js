@@ -8,12 +8,12 @@ import ReactIcon from "./Res/ReactIcon.png";
 import ReactNativeIcon from "./Res/ReactNativeIcon.png";
 import GoogleCloudIcon from "./Res/googleCloudIcon.png";
 import JavaIcon from "./Res/JavaLogo.png";
-import mongodbIcon from "./Res/mongodbIcon.png";
-import expressIcon from "./Res/expressIcon.png";
-import nodeIcon from "./Res/nodeIcon.png";
 import snapChefIcon from "./Res/SnapChefIcon.png";
-import firebaseIcon from "./Res/firebaseIcon.png";
-import googleCloudFunctionsIcon from "./Res/googleCloudFunctions.png";
+// import mongodbIcon from "./Res/mongodbIcon.png";
+// import expressIcon from "./Res/expressIcon.png";
+// import nodeIcon from "./Res/nodeIcon.png";
+// import firebaseIcon from "./Res/firebaseIcon.png";
+// import googleCloudFunctionsIcon from "./Res/googleCloudFunctions.png";
 export const projects = [
   {
     title: "Portfolio V1",

@@ -53,12 +53,7 @@ function Project({ style, title, description, techStack, links, projectIcon }) {
             onClose={handleClose}
           >
             {links.map((l, i) => (
-              <a
-                target="none"
-                href={l.link}
-                className={style.noUnderlineText}
-                key={i}
-              >
+              <a href={l.link} className={style.noUnderlineText} key={i}>
                 <MenuItem className={style.rowCenter} onClick={handleClose}>
                   <LinkButton label={l.label} style={style} />
                   <Typography className={style.projectLinkText}>

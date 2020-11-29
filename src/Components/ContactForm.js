@@ -29,6 +29,9 @@ const ContactForm = ({ style, currentTheme }) => {
       input,
       process.env.REACT_APP_EMAILJS_KEY
     );
+    setEmail("");
+    setName("");
+    setMessage("");
     setEmailSent(true);
   }
   const handleCloseSend = () => {

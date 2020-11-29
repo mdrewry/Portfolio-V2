@@ -47,10 +47,13 @@ export const projects = [
   {
     title: "Crowd Flow",
     description:
-      "Crowd Flow was a project made at Swamphacks VI, in 2019. It is a webapp developed using React, and Google Cloud services. The app was intended to be a tool used for event planning that would give organizers information on movement patterns, which would allow them to create a better experience. This was my first experience working with a team on a GitHub repository.",
+      "Crowd Flow was a project made at Swamphacks VI, in 2019. I worked with 2 others on the frontend of the website while other group members created a Google Cloud SQL database. The purpose of the app is to improve a passenger's experience on a cruise by highlighting high traffic areas and times.",
     links: [
       { label: "Github", link: "https://github.com/manthi4/SwampHack2020" },
-      { label: "DevPost", link: "devpost.com/software/crowdflow-u0jghn" },
+      {
+        label: "DevPost",
+        link: "https://devpost.com/software/crowdflow-u0jghn",
+      },
     ],
     projectIcon: CrowdFlowIcon,
     techStack: [

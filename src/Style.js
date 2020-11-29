@@ -1,7 +1,8 @@
 import { makeStyles, createMuiTheme } from "@material-ui/core/styles";
-
+import diagonalURL from "./Res/backgroundA.svg";
+import diagonalURL2 from "./Res/backgroundB.svg";
 export const appstyle = (currentTheme) => {
-  const useStyles = makeStyles((theme) => ({
+  const useStyles = makeStyles(() => ({
     //main page
     main: {
       textAlign: "center",
@@ -10,17 +11,13 @@ export const appstyle = (currentTheme) => {
       minHeight: "400vh",
       overflow: "hidden",
     },
-    particleBackground: {
-      position: "fixed",
+    sectionAWrapper: {
       width: "100%",
-      height: "100%",
-      zIndex: "1",
+      backgroundImage: `url(${diagonalURL})`,
     },
-    content: {
-      position: "relative",
-      zIndex: "10",
-      minHeight: "100vh",
-      paddingBottom: "20px",
+    sectionBWrapper: {
+      width: "100%",
+      backgroundImage: `url(${diagonalURL2})`,
     },
     section: {
       minHeight: "100vh",
@@ -29,11 +26,23 @@ export const appstyle = (currentTheme) => {
       alignItems: "center",
       justifyContent: "center",
     },
-    SubmitButtonWrapper: {
+    cardMain: {
+      border: "solid",
+      backgroundColor: currentTheme.primary,
+      borderColor: currentTheme.highlight,
+      height: "100%",
+      width: "100%",
       display: "flex",
-      alignItems: "center",
+      flexDirection: "column",
+      "&:hover": {
+        boxShadow: `1px 1px 10px 3px ${currentTheme.highlight}`,
+      },
+    },
+    cardContent: {
       backgroundColor: currentTheme.secondary,
-      padding: "10px",
+      display: "flex",
+      flexDirection: "column",
+      flexGrow: "1",
     },
     welcomeText: {
       fontSize: "25px",
@@ -116,8 +125,10 @@ export const appstyle = (currentTheme) => {
     submitText: {
       color: currentTheme.textColor,
       fontSize: 15,
+      marginRight: "10px",
     },
     submitButton: {
+      marginTop: "10px",
       backgroundColor: currentTheme.highlight,
       color: currentTheme.textColor,
     },
@@ -140,6 +151,7 @@ export const appstyle = (currentTheme) => {
       backgroundColor: currentTheme.primary,
       borderColor: currentTheme.highlight,
       height: "100%",
+      minHeight: "300px",
       display: "flex",
       flexDirection: "column",
       "&:hover": {

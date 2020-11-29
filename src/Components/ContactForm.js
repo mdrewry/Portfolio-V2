@@ -5,7 +5,6 @@ import {
   SnackbarContent,
   Snackbar,
   Typography,
-  Container,
 } from "@material-ui/core/";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import { Send } from "@material-ui/icons";
@@ -55,86 +54,85 @@ const ContactForm = ({ style, currentTheme }) => {
           action={<Send />}
         />
       </Snackbar>
-      <Container>
-        <form style={{ marginBottom: "10px" }} onSubmit={(e) => sendMessage(e)}>
-          <ThemeProvider theme={theme}>
-            <TextField
-              label="Name"
-              autoComplete="disabled"
-              className={style.formField}
-              inputProps={{
-                style: {
-                  color: currentTheme.textColor,
-                },
-              }}
-              InputLabelProps={{
-                style: {
-                  color: currentTheme.textColor,
-                },
-              }}
-              value={name}
-              fullWidth={true}
-              required
-              onChange={(e) => setName(e.target.value)}
-              variant="filled"
-            />
+      <form
+        style={{ marginBottom: "10px", width: "100%" }}
+        onSubmit={(e) => sendMessage(e)}
+      >
+        <ThemeProvider theme={theme}>
+          <TextField
+            label="Name"
+            autoComplete="disabled"
+            className={style.formField}
+            inputProps={{
+              style: {
+                color: currentTheme.textColor,
+              },
+            }}
+            InputLabelProps={{
+              required: false,
+              style: {
+                color: currentTheme.textColor,
+              },
+            }}
+            value={name}
+            fullWidth={true}
+            required
+            onChange={(e) => setName(e.target.value)}
+            variant="filled"
+          />
 
-            <TextField
-              label="Email"
-              autoComplete="disabled"
-              className={style.formField}
-              inputProps={{
-                style: { color: currentTheme.textColor },
-              }}
-              InputLabelProps={{
-                style: {
-                  color: currentTheme.textColor,
-                },
-              }}
-              value={email}
-              required
-              fullWidth={true}
-              onChange={(e) => setEmail(e.target.value)}
-              variant="filled"
-            />
+          <TextField
+            label="Email"
+            autoComplete="disabled"
+            className={style.formField}
+            inputProps={{
+              style: { color: currentTheme.textColor },
+            }}
+            InputLabelProps={{
+              required: false,
+              style: {
+                color: currentTheme.textColor,
+              },
+            }}
+            value={email}
+            required
+            fullWidth={true}
+            onChange={(e) => setEmail(e.target.value)}
+            variant="filled"
+          />
 
-            <TextField
-              label="Message"
-              className={style.formField}
-              inputProps={{
-                style: {
-                  color: currentTheme.textColor,
-                },
-              }}
-              InputLabelProps={{
-                style: {
-                  color: currentTheme.textColor,
-                },
-              }}
-              value={message}
-              fullWidth={true}
-              required
-              multiline
-              rows={5}
-              onChange={(e) => setMessage(e.target.value)}
-              variant="filled"
-            />
-          </ThemeProvider>
-          <div className={style.SubmitButtonWrapper}>
-            <Typography className={style.submitText}>
-              Email mdrewry0@gmail.com
-            </Typography>
-            <div className={style.filler} />
-            <Button
-              type="submit"
-              variant="contained"
-              className={style.submitButton}
-            >
-              <Send />
-            </Button>
-          </div>
-        </form>
-      </Container>
+          <TextField
+            label="Message"
+            className={style.formField}
+            inputProps={{
+              style: {
+                color: currentTheme.textColor,
+              },
+            }}
+            InputLabelProps={{
+              required: false,
+              style: {
+                color: currentTheme.textColor,
+              },
+            }}
+            value={message}
+            fullWidth={true}
+            required
+            multiline
+            rows={5}
+            onChange={(e) => setMessage(e.target.value)}
+            variant="filled"
+          />
+        </ThemeProvider>
+        <Button
+          type="submit"
+          variant="contained"
+          className={style.submitButton}
+        >
+          <Typography className={style.submitText}>Send Message</Typography>
+          <Send />
+        </Button>
+      </form>
     </Fragment>
   );
 };

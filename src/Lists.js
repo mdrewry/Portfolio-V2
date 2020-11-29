@@ -8,80 +8,14 @@ import ReactIcon from "./Res/ReactIcon.png";
 import ReactNativeIcon from "./Res/ReactNativeIcon.png";
 import GoogleCloudIcon from "./Res/googleCloudIcon.png";
 import JavaIcon from "./Res/JavaLogo.png";
-import mongodbIcon from "./Res/mongodbIcon.png";
-import expressIcon from "./Res/expressIcon.png";
-import nodeIcon from "./Res/nodeIcon.png";
 import snapChefIcon from "./Res/SnapChefIcon.png";
-import firebaseIcon from "./Res/firebaseIcon.png";
-import googleCloudFunctionsIcon from "./Res/googleCloudFunctions.png";
-export default [
+// import mongodbIcon from "./Res/mongodbIcon.png";
+// import expressIcon from "./Res/expressIcon.png";
+// import nodeIcon from "./Res/nodeIcon.png";
+// import firebaseIcon from "./Res/firebaseIcon.png";
+// import googleCloudFunctionsIcon from "./Res/googleCloudFunctions.png";
+export const projects = [
   {
-    key: "0",
-    title: "GameSetMatch",
-    description:
-      "I have spent the summer of 2020 developing a full stack webapp that is powered with React on the frontend and Google Firebase on the backend. I am the engineer responsible for the codebase and work with a great project manager and user experience designer. This internship is the largest project I have worked on to date and has given me an amazing opportunity to become more familiar with JavaScript, React, Firebase, and managing large codebases. The project is currently private on Github. For more information contact the product owner, Joel Relova (joelrelova@gmail.com).",
-    links: [
-      {
-        label: "Project Owner",
-        link: "https://www.linkedin.com/in/joel-relova-0b476a2/",
-      },
-    ],
-    projectIcon: SimpleIntervalIcon,
-    techStack: [
-      {
-        key: "1",
-        path: ReactIcon,
-        name: "React",
-      },
-      {
-        key: "2",
-        path: nodeIcon,
-        name: "Node JS",
-      },
-      {
-        key: "3",
-        path: firebaseIcon,
-        name: "Firebase",
-      },
-      {
-        key: "4",
-        path: googleCloudFunctionsIcon,
-        name: "Google Cloud Functions",
-      },
-    ],
-  },
-  {
-    key: "1",
-    title: "Heavenly Writing",
-    description:
-      "As part of my Software Engineering class, CEN3031 at UF, the University partnered with local businesses in order to provide experience working on a full stack webapp. This app was created using the MERN stack, and I developed the React frontend with a team of 2 others. ",
-    projectIcon: HeavenlyAstrologyIcon,
-    links: [{ label: "Github", link: "https://github.com/6XAM/MVP" }],
-    techStack: [
-      {
-        key: "1",
-        path: mongodbIcon,
-        name: "Mongo Databases",
-      },
-      {
-        key: "2",
-        path: expressIcon,
-        name: "Express JS",
-      },
-      {
-        key: "3",
-        path: ReactIcon,
-        name: "React",
-      },
-      {
-        key: "4",
-        path: nodeIcon,
-        name: "Node JS",
-      },
-    ],
-  },
-  {
-    key: "2",
     title: "Portfolio V1",
     description:
       "My first portfolio website. This allowed me to become more comfortable with JavaScript and React.",
@@ -89,14 +23,12 @@ export default [
     projectIcon: PortfolioV1Icon,
     techStack: [
       {
-        key: "1",
         path: ReactIcon,
         name: "React",
       },
     ],
   },
   {
-    key: "3",
     title: "Portfolio V2",
     description:
       "A second attempt at creating a portfolio website with a different design in mind. I was able to use the experience gained from the Heavenly Astrology/UF internship to create a flexible, mobile friendly website.",
@@ -107,14 +39,12 @@ export default [
     projectIcon: PortfolioV2Icon,
     techStack: [
       {
-        key: "1",
         path: ReactIcon,
         name: "React",
       },
     ],
   },
   {
-    key: "4",
     title: "Crowd Flow",
     description:
       "Crowd Flow was a project made at Swamphacks VI, in 2019. It is a webapp developed using React, and Google Cloud services. The app was intended to be a tool used for event planning that would give organizers information on movement patterns, which would allow them to create a better experience. This was my first experience working with a team on a GitHub repository.",
@@ -125,19 +55,16 @@ export default [
     projectIcon: CrowdFlowIcon,
     techStack: [
       {
-        key: "1",
         path: ReactIcon,
         name: "React",
       },
       {
-        key: "2",
         path: GoogleCloudIcon,
         name: "Google Cloud",
       },
     ],
   },
   {
-    key: "5",
     title: "Simple Interval",
     description:
       "An interval timer inspired by my friend's workout routine. It was created using Android Studio with Java. This app is available on the Google Play Store.",
@@ -152,19 +79,16 @@ export default [
     projectIcon: SimpleIntervalIcon,
     techStack: [
       {
-        key: "1",
         path: AndroidStudioIcon,
         name: "Android Studio",
       },
       {
-        key: "2",
         path: JavaIcon,
         name: "Java",
       },
     ],
   },
   {
-    key: "6",
     title: "Snap Chef",
     description:
       "This app was a small summer project created with my friends. We wanted to get some experience using React Native and the Google Vision API. The app allows a user to select or capture an image of available ingredients and displays a filtered list of recipes.",
@@ -172,10 +96,31 @@ export default [
     projectIcon: snapChefIcon,
     techStack: [
       {
-        key: "1",
         path: ReactNativeIcon,
         name: "React Native",
       },
     ],
+  },
+];
+
+export const experience = [
+  {
+    title: "GameSetMatch",
+    description:
+      "I have spent the summer of 2020 developing a full stack webapp that is powered with React on the frontend and Google Firebase on the backend. I am the engineer responsible for the codebase and work with a great project manager and user experience designer. This internship is the largest project I have worked on to date and has given me an amazing opportunity to become more familiar with JavaScript, React, Firebase, and managing large codebases. The project is currently private on Github. For more information contact the product owner, Joel Relova (joelrelova@gmail.com).",
+    links: [
+      {
+        label: "Project Owner",
+        link: "https://www.linkedin.com/in/joel-relova-0b476a2/",
+      },
+    ],
+    projectIcon: SimpleIntervalIcon,
+  },
+  {
+    title: "Heavenly Writing",
+    description:
+      "As part of my Software Engineering class, CEN3031 at UF, the University partnered with local businesses in order to provide experience working on a full stack webapp. This app was created using the MERN stack, and I developed the React frontend with a team of 2 others. ",
+    projectIcon: HeavenlyAstrologyIcon,
+    links: [{ label: "Github", link: "https://github.com/6XAM/MVP" }],
   },
 ];

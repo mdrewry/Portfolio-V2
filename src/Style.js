@@ -81,12 +81,13 @@ export const appstyle = (currentTheme) => {
       },
     },
     //ThemeSelector
-    filler: {
-      flexGrow: "1",
-    },
     themeSelectorMain: {
       borderRadius: "10px",
       backgroundColor: currentTheme.secondary,
+      borderColor: currentTheme.highlight,
+      border: "solid",
+      paddingLeft: "10px",
+      paddingRight: "10px",
     },
     themeSelectorList: {
       marginTop: "5px",
@@ -209,12 +210,48 @@ export const appstyle = (currentTheme) => {
       backgroundColor: "#FFFFFF",
       textAlign: "center",
     },
+    //Peers
+    peerAvatar: {
+      width: "40px",
+      height: "40px",
+      marginRight: "10px",
+    },
+    peerMain: {
+      borderRadius: "10px",
+      paddingLeft: "10px",
+      paddingRight: "10px",
+      paddingTop: "10px",
+      backgroundColor: currentTheme.secondary,
+      borderColor: currentTheme.highlight,
+      border: "solid",
+    },
+    peerList: {
+      marginTop: "5px",
+    },
+    peerTitle: {
+      fontSize: "20px",
+      fontFamily: "Monospace",
+      color: currentTheme.highlight,
+      whiteSpace: "nowrap",
+    },
+    peerTitleWrapper: { minWidth: "250px" },
+    peerText: {
+      fontSize: "20px",
+      fontFamily: "Monospace",
+      color: currentTheme.textColor,
+      "&:hover": {
+        color: currentTheme.highlight,
+      },
+    },
     //Misc
     rowCenter: {
       display: "flex",
       flexDirection: "row",
       alignItems: "center",
       width: "100%",
+    },
+    filler: {
+      flexGrow: "1",
     },
     flex: {
       display: "flex",
@@ -262,11 +299,16 @@ export const appstyle = (currentTheme) => {
           backgroundColor: currentTheme.secondary,
         },
       },
+      MuiCard: {
+        root: {
+          borderRadius: "10px",
+        },
+      },
       MuiMenuItem: {
         root: {
           backgroundColor: currentTheme.secondary,
           border: "solid",
-          borderRadius: "5px",
+          borderRadius: "10px",
           borderWidth: "1px",
           borderColor: currentTheme.secondary,
           "&:hover": {

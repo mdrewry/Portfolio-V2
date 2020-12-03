@@ -17,13 +17,24 @@ import rohanicon from "../Res/rohanicon.png";
 import andreaicon from "../Res/andreaicon.png";
 const Peers = ({ style }) => {
   const [openPeers, setOpenPeers] = useState(false);
-  const [peers, setPeers] = useState([
+  const peers = [
     {
       name: "Andrea Relova",
       avatar: andreaicon,
       url: "http://andrearelova.com",
     },
-  ]);
+    { name: "Juan Torres", avatar: juanicon, url: "http://torresjuan.com" },
+    {
+      name: "Nelson Reina",
+      avatar: nelsonicon,
+      url: "http://reinanelson.com",
+    },
+    {
+      name: "Rohan Samatha",
+      avatar: rohanicon,
+      url: "http://rohansamanta.com",
+    },
+  ];
   const anchorRef = useRef(null);
   const prevOpen = useRef(openPeers);
   const handleClose = (event) => {
@@ -33,30 +44,6 @@ const Peers = ({ style }) => {
     setOpenPeers(false);
   };
   useEffect(() => {
-    const friends = [
-      {
-        name: "Rohan Samatha",
-        avatar: rohanicon,
-        url: "http://rohansamanta.com",
-      },
-      { name: "Juan Torres", avatar: juanicon, url: "http://torresjuan.com" },
-      {
-        name: "Nelson Reina",
-        avatar: nelsonicon,
-        url: "http://reinanelson.com",
-      },
-    ]
-      .map((a) => ({ sort: Math.random(), value: a }))
-      .sort((a, b) => a.sort - b.sort)
-      .map((a) => a.value);
-    setPeers([
-      {
-        name: "Andrea Relova",
-        avatar: andreaicon,
-        url: "http://andrearelova.com",
-      },
-      ...friends,
-    ]);
     if (prevOpen.current === true && openPeers === false) {
       anchorRef.current.focus();
     }

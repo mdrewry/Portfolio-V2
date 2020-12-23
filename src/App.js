@@ -16,7 +16,7 @@ import Project from "./Components/Project";
 import Job from "./Components/Job";
 import ContactForm from "./Components/ContactForm";
 import TopNav from "./Components/TopNav";
-
+import Peers from "./Components/Peers";
 function SectionA({ children, style }) {
   return (
     <div className={style.sectionAWrapper}>
@@ -119,6 +119,9 @@ function App() {
             <ContactForm currentTheme={currentTheme} style={style} />
           </StyledCard>
         </SectionB>
+        <div style={{ position: "absolute", bottom: "10px", right: "10px" }}>
+          <Peers style={style} />
+        </div>
       </div>
     </MuiThemeProvider>
   );
